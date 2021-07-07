@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trip InProgress</title>
+    <link rel="stylesheet" href="css/commontheme.css">
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <link rel="stylesheet" href="css/stylesheet-radio.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Tablet Navigation Part Starts Here -->
+            <div class="col-md-12">
+                <div class="col-md-4 float-start">
+                    <img src="images/Logo.svg" alt="icon" class="logo">
+                </div>
+                <div class="col-md-4 float-start text-center p-1 status-bar justify-content-center in-progress">
+                    <p class="status">In Progress</p>
+                </div>
+                <div class="col-md-4 float-start icon-part ">
+
+                    <!-- Admin Contact Part Starts Here -->
+                    <div class="dropdown float-start">
+                        <a href="#" data-toggle="dropdown" aria-expanded="false"> <img class="cursor mt-1" src="images/Phone-icon.svg" alt="filter-icon" title="Advanced Filter" /></a>
+                        <div class="dropdown-menu m-0 admin-contact">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-12 pb-2 border-0 mt-2 close-filter"><span class="text-style-title filter-title">Admin Contacts</span>
+                                        <button type="button" class="btn-close float-end cross-icon" data-bs-dismiss="advanced-filter" aria-label="Close">
+                                        </button>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="row mb-3">
+                                            <div>
+                                                <label class="float-start mb-3"><a class="link contact-number"
+                                                        href="#">+91 (123)456-7890</a>-Raghavan</label>
+                                                <label class="float-start"><a class="link contact-number" href="#">+91
+                                                        (456)778-4569</a>-Santhosh</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Admin Contact Part Ends Here -->
+
+
+
+                    <!-- Notifications Part Starts Here -->
+                    <div class="dropdown float-start">
+                        <a href="#" data-toggle="dropdown" aria-expanded="false"> 
+                            <img class="cursor ms-4" src="images/Bell-icon.svg" alt="filter-icon" title="Advanced Filter"/></a>
+                        <div class="dropdown-menu m-0 advanced-filter">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-12 pb-2 border-0 mt-2 close-filter"><span
+                                            class="text-style-title filter-title fw-bold">Notifications</span>
+                                            <button type="button" class="btn-close float-end cross-icon" data-bs-dismiss="advanced-filter" aria-label="Close">
+                                        </button>
+                                    </div>
+                                    <div class="col-md-12 ps-0">
+                                        <div class="row mb-3">
+                                            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                                <li class="nav-item nav-1" role="presentation">
+                                                  <a class="nav-link nav-link1 active " id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Assigned Trips</a>
+                                                </li>
+                                                <li class="nav-item nav-2" role="presentation">
+                                                  <a class="nav-link nav-link2 " id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Completed Trips<span class="not-count ms-2">2</span></a>
+                                                </li>
+                                                
+                                              </ul>
+                                              <div class="tab-content" id="pills-tabContent">
+                                                <div class="tab-pane active nav-1-toggle" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                                                    <div class="container-fluid">
+                                                        <div class="row">
+                                                      <div class="col-md-12 mt-2 mb-3 p-0 not-content1" data-toggle="modal" data-target="#tripstarted">
+                                                                <p class="float-end indicator mt-0">Just Now</p>
+                                                                <h5 class="">You have been assigned a trip</h5>
+                                                                <a class="float-start footer-link pb-4"><img
+                                                                        src="images/Map-table.svg" alt="map-icon"
+                                                                        class="mx-1 map-icon1">Alpha City To Sholinganallur @ 8:30
+                                                                    PM </a>
+                                                            </div>
+                                                            <div class="col-md-12 mb-3 mt-2 p-0">
+                                                                <p class="float-end indicator mt-0">2h ago</p>
+                                                                <h5 class="">You have been assigned a trip</h5>
+                                                                <a class="float-start footer-link"><img
+                                                                        src="images/Map-table.svg" alt="map-icon"
+                                                                        class="mx-1 map-icon1">Alpha City To Sholinganallur @ 8:30
+                                                                    PM </a>
+                                                            </div>
+                                                        </div>
+                                                   
+                                                    <div class="col-md-6 float-start mt-1 mb-0 p-0">
+                                                        
+                                                            <p class="mb-0 not-status">2 Notifications</p>
+                                                        
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tab-pane  nav-2-toggle" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                                                    <div class="container-fluid">
+                                                        <div class="row">
+                                                            <div class="col-md-12 mt-1 mb-3 p-0 not-content1">
+                                                                <p class="float-end indicator mt-0 p-1">Just Now</p>
+                                                                <a class="float-start footer-link pb-4"><img
+                                                                        src="images/Tick-Icon.svg" alt="tick-icon" class="mx-1">Alpha
+                                                                    City To Sholinganallur @ 8:30 PM </a>
+                                                            </div>
+                                                            <div class="col-md-12 mt-1 mb-3 p-0">
+                                                                <p class="float-end indicator mt-0 p-1">2h ago</p>
+                                                                <a class="float-start footer-link"><img
+                                                                        src="images/Tick-Icon.svg" alt="tick-icon" class="mx-1">Alpha
+                                                                    City To Sholinganallur @ 8:30 PM </a>
+                                                            </div>
+                                            
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-12 ms-3 mt-4 mb-0">
+                                                        <div class="col-md-6 float-start">
+                                                            <p class="mb-0 not-status">2 Notifications</p>
+                                                        </div>
+                                                        <div class="col-md-4 float-end">
+                                                            <a href="#" class="footer-link">
+                                                                <h3 class="mb-0 clr-all">Clear All</h3>
+                                                            </a>
+                                                        </div>
+                                            
+                                                    </div>
+                                            
+                                                </div>
+                                               
+                                              </div>
+                                              
+                                          
+
+
+
+                                    </div>
+
+
+                                </div>
+
+                            
+
+
+
+
+
+                        </div>
+                    </div>
+                        </div>
+                    </div>
+                   <!-- Notifications Part Ends Here -->
+
+                  
+
+
+                    <!-- Log Out Starts Here -->
+
+                    <div class="dropdown float-start">
+                        <a href="#" data-toggle="dropdown" aria-expanded="false">  <span class="dot ms-4" >MG</span></a>
+                        <div class="dropdown-menu m-0 sign-out">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-12 border-0 mt-2 close-filter">
+                                <button type="button" class="btn-close float-end cross-icon" data-bs-dismiss="advanced-filter" aria-label="Close">
+                                        </button>
+                                    </div>
+                                    <div class="col-md-12 mx-2 log-content">
+                                        <div class="row mb-3">
+                                            <div>
+                                                <img src="images/User-Icon.svg" class="ps-4" alt="user-icon">
+                                                <h5 class="mt-2 mb-4">TN 007 5676</h5>
+                                                <button type="button" class="btn btn-primary btn-lg pe-4">Log Out</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Log Out Ends Here -->
+                   
+                </div>
+            </div>
+<!-- Tablet Navigation Part Ends Here -->
+
+<!-- Trip Details and Start-Trip Button Starts Here-->
+<div class="col-md-12 p-4">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-6 float-start">
+               <ul class="trip-settings p-0">
+                    <li class="trip-settings"><a  class="footer-link"><img src="images/Line-Icon.svg" alt="icon" class="line-icon p-0 "><span class= "Head">Trip Details</span></a></li> 
+                    <li class="trip-settings"><a  class="footer-link fw-bold"><img src="images/Clock.svg"  alt="icon" class="detail-icon p-0"></a>8 : 30 PM</li> 
+                    <li class="trip-settings"><a  class="footer-link fw-bold"><img src="images/Map.svg"  alt="icon" class="mt-2 detail-icon"></a>Alpha City To Sholinganallur</li> 
+                     <li class="trip-settings"><a class="footer-link fw-bold"><img src="images/People.svg" alt="icon" class= " detail-icon "></a>15 Passengers</li>
+                 </ul>
+            </div>
+            <div class="col-md-6 float-start trip-div">
+                <p class="trip-started">Trip started at 8:30 PM</p>
+            </div>
+            
+            
+            
+        </div>
+          
+        
+            
+      
+    </div>
+</div>
+<!-- Trip Details and Start-Trip Button Ends Here-->
+
+
+
+<!--Table Starts Here-->
+<div class="col-md-12">
+    <div class="row">
+        <div class="col-md-4 mx-1 left-col float-start">          
+            <h5 class="fw-bold">Employee Details</h5>
+</div>
+           <div class="col-md-6 reached-header">
+                <h5 class="float-start no-show fw-bold"><span class="footer-link1"><img src="images/not-reached icon.svg" alt="icon" class= "map-icon" >Not Reached</span></h5>
+                <h5 class="table-head float-start fw-bold"><span class="footer-link2"><img src="images/reached icon.svg" alt="icon" class= "map-icon" >Reached</span></h5>
+            </div>
+    </div>
+</div>
+  <div class="col-md-12 mt-2">
+      <div class="row">
+        <div class="col-md-4 mx-1 mt-2 left-col float-start">
+            <ul class="p-0">
+                <li class="Name">Rishi</li>
+                <li class="Emp-ID">Emp ID : 2082</li>
+                <li class="Address"><a class="footer-link"><img src="images/Map-table.svg" alt="icon" class= "map-icon" >Navalur AGS</a></li>
+            </ul>
+          </div>
+          <div class="col-md-6 mt-2 status-header">
+            <div class="parent">
+                <div class="map-location tivasta-w-100 no-show-button">
+                   <input type="radio" id="radio-1" name="radio1" value="r-opt1-db" checked="">
+                   <label for="radio-1"></label>
+               </div>
+               <div class="map-location tivasta-w-100 show-button">
+                <input type="radio" id="radio-2" name="radio1" value="r-opt2-db">
+                <label for="radio-2"></label>
+            </div>
+          </div>
+      </div>
+     
+  </div>
+               
+
+             
+
+
+            </div>
+            <div class="col-md-12 mt-2 alt-row">
+                <div class="row">
+                  <div class="col-md-4 left-col mx-1 mt-2 float-start">
+                      <ul class="p-0">
+                          <li class="Name">Thyagu</li>
+                          <li class="Emp-ID">Emp ID : 2086</li>
+                          <li class="Address"><a class="footer-link"><img src="images/Map-table.svg" alt="icon" class= "map-icon" >Temple Stop</a></li>
+                      </ul>
+                    </div>
+                    <div class="col-md-6 status-header mt-2">
+                      <div class="parent">
+                          <div class="map-location tivasta-w-100 no-show-button">
+                             <input type="radio" id="radio-3" name="radio2" value="r-opt1-db" checked="">
+                             <label for="radio-3"></label>
+                         </div>
+                         <div class="map-location tivasta-w-100 show-button">
+                          <input type="radio" id="radio-4" name="radio2" value="r-opt2-db">
+                          <label for="radio-4"></label>
+                       </div>
+                    </div>
+                </div>
+               
+            </div>
+                         
+          
+                       
+          
+          
+                      </div>
+                      <div class="col-md-12 mt-2">
+                        <div class="row">
+                          <div class="col-md-4 left-col mx-1 mt-2 float-start">
+                              <ul class="p-0">
+                                  <li class="Name">Mervyn</li>
+                                  <li class="Emp-ID">Emp ID : 2062</li>
+                                  <li class="Address"><a class="footer-link"><img src="images/Map-table.svg" alt="icon" class= "map-icon" >Temple Stop</a></li>
+                              </ul>
+                            </div>
+                            <div class="col-md-6 mt-2 status-header">
+                              <div class="parent">
+                                  <div class="map-location tivasta-w-100 no-show-button">
+                                     <input type="radio" id="radio-5" name="radio3" value="r-opt1-db" checked="">
+                                     <label for="radio-5"></label>
+                                 </div>
+                                 <div class="map-location tivasta-w-100 show-button">
+                                  <input type="radio" id="radio-6" name="radio3" value="r-opt2-db">
+                                  <label for="radio-6"></label>
+                               </div>
+                            </div>
+                        </div>
+                       
+                    </div>
+                                 
+                  
+                               
+                  
+                  
+                              </div>
+                              <div class="col-md-12 mt-2 alt-row">
+                                <div class="row">
+                                  <div class="col-md-4 left-col mx-1 mt-2 float-start">
+                                      <ul class="p-0">
+                                          <li class="Name">Ram</li>
+                                          <li class="Emp-ID">Emp ID : 2056</li>
+                                          <li class="Address"><a class="footer-link"><img src="images/Map-table.svg" alt="icon" class= "map-icon" >Dollor Stop</a></li>
+                                      </ul>
+                                    </div>
+                                    <div class="col-md-6 mt-2 status-header">
+                                      <div class="parent">
+                                          <div class="map-location tivasta-w-100 no-show-button">
+                                             <input type="radio" id="radio-7" name="radio4" value="r-opt1-db" checked="">
+                                             <label for="radio-7"></label>
+                                         </div>
+                                         <div class="map-location tivasta-w-100 show-button">
+                                          <input type="radio" id="radio-8" name="radio4" value="r-opt2-db">
+                                          <label for="radio-8"></label>
+                                       </div>
+                                    </div>
+                                </div>
+                               
+                            </div>
+                                         
+                          
+                                       
+                          
+                          
+                                      </div>
+                                      <div class="col-md-12 mt-2">
+                                        <div class="row">
+                                          <div class="col-md-4 left-col mx-1 mt-2 float-start">
+                                              <ul class="p-0">
+                                                  <li class="Name">Gokul</li>
+                                                  <li class="Emp-ID">Emp ID : 2067</li>
+                                                  <li class="Address"><a class="footer-link"><img src="images/Map-table.svg" alt="icon" class= "map-icon" >Sholinganallur</a></li>
+                                              </ul>
+                                            </div>
+                                            <div class="col-md-6 mt-2 status-header">
+                                              <div class="parent">
+                                                  <div class="map-location tivasta-w-100 no-show-button">
+                                                     <input type="radio" id="radio-9" name="radio5" value="r-opt1-db" checked="">
+                                                     <label for="radio-9"></label>
+                                                 </div>
+                                                 <div class="map-location tivasta-w-100 show-button">
+                                                  <input type="radio" id="radio-10" name="radio5" value="r-opt2-db">
+                                                  <label for="radio-10"></label>
+                                               </div>
+                                            </div>
+                                        </div>
+                                       
+                                    </div>
+                                                 
+                                  
+                                               
+                                  
+                                  
+                                              </div>
+                                              <div class="col-md-12 mt-2 alt-row">
+                                                <div class="row">
+                                                  <div class="col-md-4 left-col mx-1 mt-2 float-start">
+                                                      <ul class="p-0">
+                                                          <li class="Name">Raghu</li>
+                                                          <li class="Emp-ID">Emp ID : 2069</li>
+                                                          <li class="Address"><a class="footer-link"><img src="images/Map-table.svg" alt="icon" class= "map-icon" >Sholinganallur</a></li>
+                                                      </ul>
+                                                    </div>
+                                                    <div class="col-md-6 mt-2 status-header">
+                                                      <div class="parent">
+                                                          <div class="map-location tivasta-w-100 no-show-button">
+                                                             <input type="radio" id="radio-11" name="radio6" value="r-opt1-db" checked="">
+                                                             <label for="radio-11"></label>
+                                                         </div>
+                                                         <div class="map-location tivasta-w-100 show-button">
+                                                          <input type="radio" id="radio-12" name="radio6" value="r-opt2-db">
+                                                          <label for="radio-12"></label>
+                                                       </div>
+                                                    </div>
+                                                </div>
+                                               
+                                            </div>
+                                                         
+                                          
+                                                       
+                                          
+                                          
+                                                      </div>
+                                                      <div class="col-md-12 mt-2">
+                                                        <div class="row">
+                                                          <div class="col-md-4 left-col mx-1 mt-2 float-start">
+                                                              <ul class="p-0">
+                                                                  <li class="Name">Jawahar</li>
+                                                                  <li class="Emp-ID">Emp ID : 2096</li>
+                                                                  <li class="Address"><a class="footer-link"><img src="images/Map-table.svg" alt="icon" class= "map-icon" >Sholinganallur</a></li>
+                                                              </ul>
+                                                            </div>
+                                                            <div class="col-md-6 mt-2 status-header">
+                                                              <div class="parent">
+                                                                  <div class="map-location tivasta-w-100 no-show-button">
+                                                                     <input type="radio" id="radio-13" name="radio7" value="r-opt1-db" checked="">
+                                                                     <label for="radio-13"></label>
+                                                                 </div>
+                                                                 <div class="map-location tivasta-w-100 show-button">
+                                                                  <input type="radio" id="radio-14" name="radio7" value="r-opt2-db">
+                                                                  <label for="radio-14"></label>
+                                                               </div>
+                                                            </div>
+                                                        </div>
+                                                       
+                                                    </div>
+                                                                 
+                                                  
+                                                               
+                                                  
+                                                  
+                                                              </div>
+                                                              <div class="col-md-12 mt-2 alt-row">
+                                                                <div class="row">
+                                                                  <div class="col-md-4 left-col mx-1 mt-2 float-start">
+                                                                      <ul class="p-0">
+                                                                          <li class="Name">Saravanan</li>
+                                                                          <li class="Emp-ID">Emp ID : 2094</li>
+                                                                          <li class="Address"><a class="footer-link"><img src="images/Map-table.svg" alt="icon" class= "map-icon" >Sholinganallur</a></li>
+                                                                      </ul>
+                                                                    </div>
+                                                                    <div class="col-md-6 mt-2 status-header">
+                                                                      <div class="parent">
+                                                                          <div class="map-location tivasta-w-100 no-show-button">
+                                                                             <input type="radio" id="radio-15" name="radio8" value="r-opt1-db" checked="">
+                                                                             <label for="radio-15"></label>
+                                                                         </div>
+                                                                         <div class="map-location tivasta-w-100 show-button">
+                                                                          <input type="radio" id="radio-16" name="radio8" value="r-opt2-db">
+                                                                          <label for="radio-16"></label>
+                                                                       </div>
+                                                                    </div>
+                                                                </div>
+                                                               
+                                                            
+                                                                         
+                                                          
+                                                                       
+                                                          
+                                                          
+                                                                      </div>
+    </div> 
+     <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-4 left-col mx-1 mt-2 float-start">
+              <ul class="p-0">
+                  <li class="Name">Ravi</li>
+                  <li class="Emp-ID">Emp ID : 2067</li>
+                  <li class="Address"><a class="footer-link"><img src="images/Map-table.svg" alt="icon" class= "map-icon mx-2" >Sholinganallur</a></li>
+              </ul>
+            </div>
+            <div class="col-md-6 mt-2 status-header">
+              <div class="parent">
+                  <div class="map-location tivasta-w-100 no-show-button">
+                     <input type="radio" id="radio-17" name="radio10" value="r-opt1-db" checked="">
+                     <label for="radio-17"></label>
+                 </div>
+                 <div class="map-location tivasta-w-100 show-button">
+                  <input type="radio" id="radio-18" name="radio10" value="r-opt2-db" data-toggle="modal" data-target="#completed">
+                  <label for="radio-18"></label>
+               </div>
+            </div>
+        </div>
+
+
+
+    </div>
+                 
+  
+               
+  
+  
+              </div>
+              <div class="modal fade" id="completed" tabindex="-1" aria-labelledby="completed" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header pop-content">
+                      <a class="status-name text-center"><img src="images/Tick-Icon.svg" alt="tick-icon" class="mx-2">The trip ended successfully!!</a>
+                      <button type="button" class="btn-close pop-close" data-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      
+                      <button type="button" class="btn btn-secondary Go pe-4" data-bs-dismiss="modal">Ok</button>
+                    </div>
+                    <div class="modal-footer">
+                     
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+</div>
+    </div>
+
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        $('.advanced-filter').click(function (event) {
+            event.stopPropagation();
+
+        });
+        $('.btn-close').click(function () {
+            $('.advanced-filter').removeClass('show');
+        })
+        $('.nav-1').click(function (event) {
+           $('.nav-1-toggle').show();
+           $('.nav-2-toggle').hide();
+
+        });
+        $('.nav-2').click(function (event) {
+           $('.nav-2-toggle').show();
+           $('.nav-1-toggle').hide();
+
+        });
+        $('.nav-link1').addClass('active');
+        $('.nav-link1').click(  function(){
+           $('.nav-link1').addClass('active');
+           $('.nav-link2').removeClass('active');
+         
+           })
+           $('.nav-link2').click(  function(){
+            $('.nav-link2').addClass('active');
+            $('.nav-link1').removeClass('active');
+         
+           })
+    </script>
+    
+</body>
+
+</html>
