@@ -61,7 +61,7 @@
                     <!-- Notifications Part Starts Here -->
                     <div class="dropdown float-start">
                         <a href="#" data-toggle="dropdown" aria-expanded="false" >
-                            <img class="cursor ms-4"  alt="filter-icon"
+                            <img class="cursor ms-4"  src = "images/Bell-icon.svg" alt="filter-icon"
                                 title="Advanced Filter"  id="notificationID"/></a>
                         <div class="dropdown-menu m-0 advanced-filter">
                             <div class="container-fluid">
@@ -240,24 +240,30 @@
 
             <!-- AJAX STARTS HERE - KISHORE -->
            <script >
-            
+
             var response;
                 var xhttp = new XMLHttpRequest();
-                window.onload = loadDoc;
-                setInterval('loadDoc()', 1000);
+               window.onload = loadDoc;
+                
+                	
+                setInterval('loadDoc()', 10000);
              
                 
                 function loadDoc() {
-
-                    // alert("Please Refresh The Page");
+                profile();
+                    
                     xhttp.open("GET", "http://localhost:8080/api/v1/notification/TN8S6677", true);
 
                     xhttp.onreadystatechange = function () {
-                    	
-                        if (this.readyState == 4 && this.status == 200) {
-                            response = JSON.parse(this.responseText)
-                            
-                            
+                    	 if (this.readyState == 4 && this.status == 200) {
+                             
+       
+                        
+                     
+                            if(this.responseText){
+                           
+                            	response = JSON.parse(this.responseText);
+                         
                         var splitTime=response.generatedtime.split(":");
                         var hours = splitTime[0];
                         var min = splitTime[1];
@@ -319,11 +325,11 @@
                             
                             document.getElementById("notification-details").innerHTML = " <button type='button' class='btn btn-primary' data-toggle='modal' data-target=''#exampleModal' onclick='popup()'  >" + "<h5 class='text-center fw-bold'>You have been assigned a trip</h5>" + "<img src='images/Map-table.svg' alt='map-icon' class='mx-1 map-icon1'>" +
                                 response.source + " → " + response.destination + " @ " + slotTime + time +"</button>";
-                        
-                            if(response>0){
+                          
                         		document.getElementById("notificationID").src = "images/MicrosoftTeams-image.png";
                         	}
                         	else{
+                        		
                         		document.getElementById("notificationID").src = "images/Bell-icon.svg";
                         	}
                             
@@ -336,10 +342,11 @@
 
                     xhttp.send();
                 }               
-                
-                window.onload = profile;
+               
+              //  window.onload = profile;
                 function profile() {
-                	  xhttp.open("GET", "http://localhost:8080/api/v1/driverProfile/TN8S6677", true);
+                	
+                	  xhttp.open("GET", "http://localhost:8080/api/v1/driverProfile/TN8S6677", false);
 
                       xhttp.onreadystatechange = function () {
 
@@ -361,6 +368,7 @@
                       };
                       xhttp.send();
                 }
+                
                 function adminContacts() {
                 	  xhttp.open("GET", "http://localhost:8080/api/v1/adminContactDetails", true);
 
