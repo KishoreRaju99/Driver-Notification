@@ -40,17 +40,18 @@ public class DriverNotificationApplication {
 			@Override
 			public void run(String... args) throws Exception {
 				
-				TripAssignedDetails notification = new TripAssignedDetails("Trip has been assigned to the driver","Alpha City","Shollinganallur",LocalTime.of(20, 30),LocalDate.now(),LocalTime.now(),"AssignedTrip","TN8S6677");
-				driverNotificationRepo.save(notification);
+//				TripAssignedDetails notification = new TripAssignedDetails(111,"Alpha City","Shollinganallur",LocalTime.of(20, 30),LocalDate.now(),LocalTime.now(),"AssignedTrip","TN8S6677");
+//				driverNotificationRepo.save(notification);
 //				
 //				DriverProfile profile = new DriverProfile("Jawahar","Driver","TN8S6677");
 //				DriverProfileRepos.save(profile);
 //				
-//				AdminContacts contacts1 = new   AdminContacts("+91- 123456789", "Ragahavan");
-//				AdminContacts contacts2 = new   AdminContacts("+91-(123)8492003", "santhosh");
+//				AdminContacts contacts1 = new   AdminContacts("+91- 123456789", "Ragahavan",true);
+//				AdminContacts contacts2 = new   AdminContacts("+91-(123)8492003", "santhosh",false);
+//				
 //				AdminContactsReposs.save(contacts1);
 //				AdminContactsReposs.save(contacts2);
-//				
+				
 			}
 		};
 	}

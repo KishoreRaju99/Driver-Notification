@@ -16,6 +16,7 @@ import lombok.experimental.FieldDefaults;
 public class AdminContacts {
 
 	String contactNumber;
-	String adminName;
+	String employeeName;
+	boolean isAdmin;
 	
 }

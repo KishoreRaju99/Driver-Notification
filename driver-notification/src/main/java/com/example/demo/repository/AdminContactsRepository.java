@@ -5,9 +5,9 @@ import org.springframework.stereotype.Repository;
 
 import com.example.demo.entity.AdminContacts;
 
+
 @Repository
 public interface AdminContactsRepository extends MongoRepository<AdminContacts, Integer> {
 
-	
 
 }

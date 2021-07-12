@@ -2,400 +2,224 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>No Trip Assigned Page</title>
-    <link rel="stylesheet" href="css/commontheme.css">
-    <link rel="stylesheet" href="css/stylesheet.css">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>No Trip Assigned Page</title>
+<link rel="stylesheet" href="css/commontheme.css">
+<link rel="stylesheet" href="css/stylesheet.css">
 </head>
 
 <body>
-    <div class="container-fluid">
-        <div class="row">
-            <!-- Tablet Navigation Part Starts Here -->
-            <div class="col-md-12">
-                <div class="col-md-4 float-start">
-                    <img src="images/Logo.svg" alt="icon" class="logo">
-                </div>
-                <div class="col-md-4 float-start text-center p-1 status-bar justify-content-center not-assigned">
-                    <p class="status">Waiting for a trip</p>
-                </div>
-                <div class="col-md-4 float-start icon-part ">
+	<div class="container-fluid">
+		<div class="row">
 
-                    <!-- Admin Contact Part Starts Here -->
-                    <div class="dropdown float-start" >
-                        <a href="#" data-toggle="dropdown" aria-expanded="false" onclick="adminContacts()"> <img class="cursor mt-1"
-                                src="images/Phone-icon.svg" alt="filter-icon" title="Advanced Filter" /></a>
-                        <div class="dropdown-menu m-0 admin-contact">
-                            <div class="container-fluid">
-                                <div class="row">
-                                    <div class="col-md-12 pb-2 border-0 mt-2 close-filter"><span
-                                            class="text-style-title filter-title fw-bold">Admin Contacts</span>
-                                        <button type="button" class="btn-close float-end cross-icon"
-                                            data-bs-dismiss="advanced-filter" aria-label="Close">
-                                        </button>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="row mb-3">
-                                            <div id ="adminContact0">
-                                              
-                                                
-                                                        
-                                            </div>
-                                             <div id ="adminContact1">
-                                              
-                                                
-                                                        
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Admin Contact Part Ends Here -->
+			<!-- Tablet Navigation Part Starts Here -->
 
+			<div class="col-md-12">
+				<div class="col-md-4 float-start">
+					<img src="images/Logo.svg" alt="icon" class="logo">
+				</div>
+				<div
+					class="col-md-4 float-start text-center p-1 status-bar justify-content-center not-assigned">
+					<p class="status">Waiting for a trip</p>
+				</div>
+				<div class="col-md-4 float-start icon-part ">
 
+					<!-- Admin Contact Part Starts Here -->
 
-                    <!-- Notifications Part Starts Here -->
-                    <div class="dropdown float-start">
-                        <a href="#" data-toggle="dropdown" aria-expanded="false" >
-                            <img class="cursor ms-4"  src = "images/Bell-icon.svg" alt="filter-icon"
-                                title="Advanced Filter"  id="notificationID"/></a>
-                        <div class="dropdown-menu m-0 advanced-filter">
-                            <div class="container-fluid">
-                                <div class="row">
-                                    <div class="col-md-12 pb-2 border-0 mt-2 close-filter"><span
-                                            class="text-style-title filter-title fw-bold">Notifications</span>
-                                        <button type="button" class="btn-close float-end cross-icon"
-                                            data-bs-dismiss="advanced-filter" aria-label="Close">
-                                        </button>
-                                    </div>
-                                    <div class="col-md-12 ps-0">
-                                        <div class="row mb-3">
-                                            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                                                <li class="nav-item nav-1" role="presentation">
-                                                    <a class="nav-link nav-link1 active " id="pills-home-tab">Assigned
-                                                        Trips</a>
-                                                </li>
+					<div class="dropdown float-start">
+						<a href="#" data-toggle="dropdown" aria-expanded="false"
+							onclick="adminContacts()"> <img class="cursor mt-1"
+							src="images/Phone-icon.svg" alt="filter-icon"
+							title="Advanced Filter" /></a>
+						<div class="dropdown-menu m-0 admin-contact">
+							<div class="container-fluid">
+								<div class="row">
+									<div class="col-md-12 pb-2 border-0 mt-2 close-filter">
+										<span class="text-style-title filter-title fw-bold">Admin
+											Contacts</span>
+										<button type="button" class="btn-close float-end cross-icon"
+											data-bs-dismiss="advanced-filter" aria-label="Close">
+										</button>
+									</div>
+									<div class="col-md-12">
+										<div class="row mb-3">
+											<div id="adminContact0"></div>
+											<div id="adminContact1"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 
-
-                                            </ul>
-                                            <div class="tab-content" id="pills-tabContent">
-                                                <div class="tab-pane active nav-1-toggle" id="pills-home"
-                                                    role="tabpanel" aria-labelledby="pills-home-tab">
-                                                    <div class="container-fluid">
-                                                        <div class="row">
-
-                                                            <div class="col-md-12 mt-2 mb-3 p-0 not-content1"
-                                                                id="notification" data-toggle="modal"
-                                                                data-target="#tripstarted">
-                                                                <p class="float-end indicator mt-0"
-                                                                    id="notification-time"></p>
-                                                                  
-                                                                <a class="float-start footer-link pb-4"
-                                                                    id="notification-details" >
-                                                                    
-                                                                    
-                                                                     </a>
-
-
-  </div>
-                                                                </div>
-                                                               
-
-
-                                                                    
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-
-
-                                                        </div>
-                                                                      
-                                                                        </div>
-                                                                        
-
-                                            </div>
-                                        
-                                    
-                                    
-                                 </div>
-                                    </div>   
-                                </div>
-                                <!-- Notifications Part Ends Here -->
-
-
-                                <!-- Log Out Starts Here -->
-
-                                <div class="dropdown float-start" >
-                                
-                                    <a href="#" data-toggle="dropdown" aria-expanded="false"><span class="dot11 ms-4 "
-                                            onclick="profile()" id="nameicon"></span></a>
-                                          
-                                    <div class="dropdown-menu m-0 sign-out">
-                                        <div class="container-fluid">
-                                            <div class="row">
-                                                <div class="col-md-12 border-0 mt-2 close-filter">
-                                                    <button type="button" class="btn-close float-end cross-icon"
-                                                        data-bs-dismiss="advanced-filter" aria-label="Close">
-                                                    </button>
-                                                     
-                                                </div>
-                                                <div class="col-md-12 mx-2 log-content">
-                                                    <div class="row mb-3">
-                                                        <div>
-                                                        
-                                                        
-                                                            <img src="images/User-Icon.svg" class="ps-4" alt="user-icon"
-                                                                id="name">
-                                                            <h6 id="driver-profile1"></h6>
-                                                            <h6 id="driver-profile2"></h6>
-                                                            <h6 id="driver-profile3"></h6>
-                                                            
-                                                            <a href="Log-In Page.html"><button type="button"
-                                                                    class="btn btn-primary btn-lg pe-4"> Log
-                                                                    Out</button></a>
-                                                                  
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Log Out Ends Here -->
-
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Tablet Navigation Part Ends Here -->
-
-
-                    <!-- Empty State Starts Here -->
-                    <div class="col-md-12 illustration justify-content-center">
-                        <h3 class="text-center empty-status">No Trips assigned to you</h3>
-                        <img class="empty-img" src="images/Illustration.svg" alt="illustration">
-                        <h3 class="text-center empty-status">We'll notify you when a trip is assigned.</h3>
-                    </div><!-- Empty State Ends Here -->
-                </div>
-
-            
-            <!--Modal Starts Here-->
+					<!-- Admin Contact Part Ends Here -->
 
 
 
-            <!--Modal Ends Here-->
+					<!-- Notifications Part Starts Here -->
+
+					<div class="dropdown float-start">
+						<a href="#" data-toggle="dropdown" aria-expanded="false"> <img
+							class="cursor ms-4" src="images/Bell-icon.svg" alt="filter-icon"
+							title="Advanced Filter" id="notificationID" /></a>
+						<div class="dropdown-menu m-0 advanced-filter">
+							<div class="container-fluid">
+								<div class="row">
+									<div class="col-md-12 pb-2 border-0 mt-2 close-filter">
+										<span class="text-style-title filter-title fw-bold">Notifications</span>
+										<button type="button" class="btn-close float-end cross-icon"
+											data-bs-dismiss="advanced-filter" aria-label="Close">
+										</button>
+									</div>
+									<div class="col-md-12 ps-0">
+										<div class="row mb-3">
+											<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+												<li class="nav-item nav-1" role="presentation"><a
+													class="nav-link nav-link1 active " id="pills-home-tab">Assigned
+														Trips</a></li>
+
+
+											</ul>
+											<div class="tab-content" id="pills-tabContent">
+												<div class="tab-pane active nav-1-toggle" id="pills-home"
+													role="tabpanel" aria-labelledby="pills-home-tab">
+													<div class="container-fluid">
+														<div class="row">
+															<div class="col-md-12 mt-2 mb-3 p-0 not-content1"
+																id="notification" data-toggle="modal"
+																data-target="#tripstarted">
+																<p class="float-end indicator mt-0"
+																	id="notification-time"></p>
+
+																<a class="float-start footer-link pb-4"
+																	id="notification-details"></a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Notifications Part Ends Here -->
+
+
+					<!-- Log Out Starts Here -->
+
+					<div class="dropdown float-start">
+						<a href="#" data-toggle="dropdown" aria-expanded="false"><span
+							class="dot11 ms-4 " onclick="driverProfile()" id="nameicon"></span></a>
+						<div class="dropdown-menu m-0 sign-out">
+							<div class="container-fluid">
+								<div class="row">
+									<div class="col-md-12 border-0 mt-2 close-filter">
+										<button type="button" class="btn-close float-end cross-icon"
+											data-bs-dismiss="advanced-filter" aria-label="Close">
+										</button>
+									</div>
+									<div class="col-md-12 mx-2 log-content">
+										<div class="row mb-3">
+											<div>
+
+												<img src="images/User-Icon.svg" class="ps-4" alt="user-icon"
+													id="name">
+												<h6 id="driver-profile1"></h6>
+												<h6 id="driver-profile2"></h6>
+												<h6 id="driver-profile3"></h6>
+												<a href="Log-In Page.html">
+													<button type="button" class="btn btn-primary btn-lg pe-4">Log
+														Out</button>
+												</a>
+
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Log Out Ends Here -->
+
+				</div>
+			</div>
+		</div>
+		<!-- Tablet Navigation Part Ends Here -->
+
+
+		<!-- Empty State Starts Here -->
+		<div class="col-md-12 illustration justify-content-center">
+			<h3 class="text-center empty-status">No Trips assigned to you</h3>
+			<img class="empty-img" src="images/Illustration.svg"
+				alt="illustration">
+			<h3 class="text-center empty-status">We'll notify you when a
+				trip is assigned.</h3>
+		</div>
+		<!-- Empty State Ends Here -->
+	</div>
+
+
+	<!--Modal Starts Here-->
+
+
+
+	<!--Modal Ends Here-->
 
 
 
 
-            <!--Script Starts Here-->
-            <script src="js/jquery.min.js"></script>
-            <script src="js/popper.js"></script>
-            <script src="js/bootstrap.min.js"></script>
-           
-            <script>
-                $('.advanced-filter').click(function (event) {
-                    event.stopPropagation();
+	<!--Script Starts Here-->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/popper.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/driverNotification.js"></script>
 
-                });
-                $('#close-filter').click(function () {
-                    $('.advanced-filter').removeClass('show');
-                })
-                $('.btn-close').click(function () {
-                    $('.advanced-filter').removeClass('show');
-                })
-                $('.nav-1').click(function (event) {
-                    $('.nav-1-toggle').show();
-                    $('.nav-2-toggle').hide();
+	<script>
+		$('.advanced-filter').click(function(event) {
+			event.stopPropagation();
 
-                });
-                $('.nav-2').click(function (event) {
-                    $('.nav-2-toggle').show();
-                    $('.nav-1-toggle').hide();
+		});
+		$('#close-filter').click(function() {
+			$('.advanced-filter').removeClass('show');
+		})
+		$('.btn-close').click(function() {
+			$('.advanced-filter').removeClass('show');
+		})
+		$('.nav-1').click(function(event) {
+			$('.nav-1-toggle').show();
+			$('.nav-2-toggle').hide();
 
-                });
-                $('.nav-link1').addClass('active');
-                $('.nav-link1').click(function () {
-                    $('.nav-link1').addClass('active');
-                    $('.nav-link2').removeClass('active');
+		});
+		$('.nav-2').click(function(event) {
+			$('.nav-2-toggle').show();
+			$('.nav-1-toggle').hide();
 
-                })
-                $('.nav-link2').click(function () {
-                    $('.nav-link2').addClass('active');
-                    $('.nav-link1').removeClass('active');
+		});
+		$('.nav-link1').addClass('active');
+		$('.nav-link1').click(function() {
+			$('.nav-link1').addClass('active');
+			$('.nav-link2').removeClass('active');
 
-                })
-               
-               
+		})
+		$('.nav-link2').click(function() {
+			$('.nav-link2').addClass('active');
+			$('.nav-link1').removeClass('active');
 
-               
-            </script>
-            <!--Script Ends Here-->
-            
-
-
-            <!-- AJAX STARTS HERE - KISHORE -->
-           <script >
-
-            var response;
-                var xhttp = new XMLHttpRequest();
-               window.onload = loadDoc;
-                
-                	
-                setInterval('loadDoc()', 10000);
-             
-                
-                function loadDoc() {
-                profile();
-                    
-                    xhttp.open("GET", "http://localhost:8080/api/v1/notification/TN8S6677", true);
-
-                    xhttp.onreadystatechange = function () {
-                    	 if (this.readyState == 4 && this.status == 200) {
-                             
-       
-                        
-                     
-                            if(this.responseText){
-                           
-                            	response = JSON.parse(this.responseText);
-                         
-                        var splitTime=response.generatedtime.split(":");
-                        var hours = splitTime[0];
-                        var min = splitTime[1];
-                        var time;
-                        if(hours<12){
-                        	if(hours==00){
-                        		time="12"+":"+min+" "+"AM";
-                        	}
-                        	else{
-                        		time=hours+":"+min+" "+"AM";
-                        	}
-                        	
-                        }
-                        else if(hours==12){
-                        	time=hours+":"+min+" "+"PM";
-                        	
-                        	
-                        }
-                        else{
-                        	var hour= hours-12;
-                        	time=hour+":"+min+" "+"PM";
-                        }
-                        
-                        
-                        var timeSlot=response.timeSlot.split(":");
-                        var slotHours = timeSlot[0];
-                        var slotMin = timeSlot[1];
-                        var slotTime;
-                        if(slotHours<12){
-                        	if(slotHours==00){
-                        		slotTime="12"+":"+slotMin+" "+"AM";
-                        	}
-                        	else if(slotHours<10){
-                        		
-                        		slotTime="0"+slotHours+":"+slotMin+" "+"AM";
-                        	}
-                        	else{
-                        		slotTime=slotHours+":"+slotMin+" "+"AM";
-                        	}
-                        	
-                        }
-                        else if(slotHours==12){
-                        	slotTime=slotHours+":"+slotMin+" "+"PM";
-                        	
-                        	
-                        }
-                        else{
-                        	var slothour= slotHours-12;
-                        	if(slothour<10){
-                        		slotTime="0"+slothour+":"+slotMin+" "+"PM";
-                        	}
-                        	else{
-                        		slotTime=slothour+":"+slotMin+" "+"PM";
-                        	}
-                        	
-                        }
-                        
-	                      
-                            
-                            document.getElementById("notification-details").innerHTML = " <button type='button' class='btn btn-primary' data-toggle='modal' data-target=''#exampleModal' onclick='popup()'  >" + "<h5 class='text-center fw-bold'>You have been assigned a trip</h5>" + "<img src='images/Map-table.svg' alt='map-icon' class='mx-1 map-icon1'>" +
-                                response.source + " → " + response.destination + " @ " + slotTime + time +"</button>";
-                          
-                        		document.getElementById("notificationID").src = "images/MicrosoftTeams-image.png";
-                        	}
-                        	else{
-                        		
-                        		document.getElementById("notificationID").src = "images/Bell-icon.svg";
-                        	}
-                            
-                        }
-
-                    };
+		})
+	</script>
+	<!--Script Ends Here-->
 
 
 
 
-                    xhttp.send();
-                }               
-               
-              //  window.onload = profile;
-                function profile() {
-                	
-                	  xhttp.open("GET", "http://localhost:8080/api/v1/driverProfile/TN8S6677", false);
-
-                      xhttp.onreadystatechange = function () {
-
-                          if (this.readyState == 4 && this.status == 200) {
-                        	  
-                        	  
-                        	  response = JSON.parse(this.responseText)
-                        	  
-                    var driveName = $('#drive-profile1').text();
-                    var intials = response.driverName.charAt(0) ;//+ response.driverName.charAt(1) ;
-                    var nameicon = $('#nameicon').text(intials);
-                    
-                    document.getElementById("driver-profile1").innerText = response.driverName;
-                    document.getElementById("driver-profile2").innerText = response.role;
-                    document.getElementById("driver-profile3").innerText = response.cabNumber;
-                   
-                    
-                }
-                      };
-                      xhttp.send();
-                }
-                
-                function adminContacts() {
-                	  xhttp.open("GET", "http://localhost:8080/api/v1/adminContactDetails", true);
-
-                      xhttp.onreadystatechange = function () {
-
-                          if (this.readyState == 4 && this.status == 200) {
-         	  
-                        	  response = JSON.parse(this.responseText);
-                        	  for(var i=0;i<response.length;i++){
-                        		  
-                        
-                        	  document.getElementById("adminContact"+i).innerHTML = "<label class='float-start mb-3' id='contacts1'><a class='link contact-number' href='#'>"+response[i].contactNumber+"</a>"+"  -  "+response[i].adminName+"</label>" ;
-                        	 
-                        	  }
-                          }
-                      };
-                      xhttp.send();
-                }
-            </script>
-
-            <!-- AJAX ENDS HERE - KISHORE -->
 
 
 
 </body>
-
-
-
 
 </html>
