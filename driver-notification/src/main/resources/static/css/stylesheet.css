@@ -43,13 +43,6 @@
     font-family: 'NunitoSans-SemiBold';
     
 }
-.link-contact-number-1{
-  pointer-events: auto;
-
-}
-.float-start mb-3{
-  pointer-events: auto;
-}
 .icon-part
 {
     padding-top: 20px;
@@ -66,22 +59,6 @@
     position: absolute;
     padding: 6px;
 }
-
-.dot11
-{
-   display:inline-block;
-  font-size:1em;
-  width:2.5em;
-  height:2.5em;
-  line-height:2.5em;
-  text-align:center;
-  border-radius:50%;
-   background-color: #1B2074;
-  vertical-align:middle;
-  margin-right:1em;
-  color:white;
-}
-
 .user-name
 {
     padding: 5px;
@@ -312,6 +289,9 @@
     padding-left: 92px;
     padding-top: 20px;
   }
+ .modal-body2 {
+padding-left: 216px;
+}
   .Go
    {
        background-color: #F8BB10;
@@ -719,25 +699,18 @@
       margin-left: 96px;
       padding-left: 64px;
   }
+  .dot11
+{
+   display:inline-block;
+  font-size:1em;
+  width:2.5em;
+  height:2.5em;
+  line-height:2.5em;
+  text-align:center;
+  border-radius:50%;
+   background-color: #1B2074;
+  vertical-align:middle;
+  margin-right:1em;
+  color:white;
+}
 /**trip in progress ends**/
-
-
-#container {
-  width: 100px;
-  height: 100px;
-  border-radius: 100px;
-  background: #333;
-}
-
-#name {
-  
-  text-align: center;
-  color: white;
-  font-size: 28px;
-  line-height: 100px;
-}
-
-.link contact-number1{
-	text-decoration: none;
-	cursor: pointer;
-}

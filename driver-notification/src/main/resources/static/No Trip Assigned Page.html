@@ -13,9 +13,7 @@
 <body>
 	<div class="container-fluid">
 		<div class="row">
-
 			<!-- Tablet Navigation Part Starts Here -->
-
 			<div class="col-md-12">
 				<div class="col-md-4 float-start">
 					<img src="images/Logo.svg" alt="icon" class="logo">
@@ -27,7 +25,7 @@
 				<div class="col-md-4 float-start icon-part ">
 
 					<!-- Admin Contact Part Starts Here -->
-
+					
 					<div class="dropdown float-start">
 						<a href="#" data-toggle="dropdown" aria-expanded="false"
 							onclick="adminContacts()"> <img class="cursor mt-1"
@@ -53,16 +51,14 @@
 							</div>
 						</div>
 					</div>
-
 					<!-- Admin Contact Part Ends Here -->
 
 
 
 					<!-- Notifications Part Starts Here -->
-
 					<div class="dropdown float-start">
 						<a href="#" data-toggle="dropdown" aria-expanded="false"> <img
-							class="cursor ms-4" src="images/Bell-icon.svg" alt="filter-icon"
+							src="images/Bell-icon.svg" class="cursor ms-4" alt="filter-icon"
 							title="Advanced Filter" id="notificationID" /></a>
 						<div class="dropdown-menu m-0 advanced-filter">
 							<div class="container-fluid">
@@ -87,6 +83,7 @@
 													role="tabpanel" aria-labelledby="pills-home-tab">
 													<div class="container-fluid">
 														<div class="row">
+
 															<div class="col-md-12 mt-2 mb-3 p-0 not-content1"
 																id="notification" data-toggle="modal"
 																data-target="#tripstarted">
@@ -94,19 +91,26 @@
 																	id="notification-time"></p>
 
 																<a class="float-start footer-link pb-4"
-																	id="notification-details"></a>
+																	id="notification-details"> </a>
+
+
 															</div>
 														</div>
+
 													</div>
 												</div>
 											</div>
+
+
 										</div>
+
 									</div>
+
 								</div>
+
 							</div>
 						</div>
 					</div>
-
 					<!-- Notifications Part Ends Here -->
 
 
@@ -122,24 +126,25 @@
 										<button type="button" class="btn-close float-end cross-icon"
 											data-bs-dismiss="advanced-filter" aria-label="Close">
 										</button>
+
 									</div>
 									<div class="col-md-12 mx-2 log-content">
 										<div class="row mb-3">
 											<div>
-
 												<img src="images/User-Icon.svg" class="ps-4" alt="user-icon"
 													id="name">
 												<h6 id="driver-profile1"></h6>
-												<h6 id="driver-profile2"></h6>
+												<h6 id="driver-profile2">Driver</h6>
 												<h6 id="driver-profile3"></h6>
-												<a href="Log-In Page.html">
-													<button type="button" class="btn btn-primary btn-lg pe-4">Log
-														Out</button>
-												</a>
+
+												<a href="DriverLogin.html"><button type="button"
+														class="btn btn-primary btn-lg pe-4" onClick="logOut()">
+														Log Out</button></a>
 
 											</div>
 										</div>
 									</div>
+
 								</div>
 							</div>
 						</div>
@@ -169,7 +174,6 @@
 
 
 	<!--Modal Ends Here-->
-
 
 
 
@@ -213,11 +217,6 @@
 		})
 	</script>
 	<!--Script Ends Here-->
-
-
-
-
-
 
 
 </body>
