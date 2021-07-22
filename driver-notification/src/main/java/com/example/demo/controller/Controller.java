@@ -1,7 +1,6 @@
 package com.example.demo.controller;
 import java.util.List;
 import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,10 +10,9 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.example.demo.entity.BookingRequest;
 import com.example.demo.entity.TripCabInfo;
-import com.example.demo.repository.BookingRepository;
+import com.example.demo.repo.BookingRepository;
 import com.example.demo.service.TripService;
 
 @RestController
@@ -22,6 +20,7 @@ public class Controller {
 
 	@Autowired
 	TripService service;
+	
 	@Autowired
 	private BookingRepository repo;
 	
@@ -41,10 +40,13 @@ public class Controller {
 	
 	}
        @GetMapping(path="/Getalldetails/{TripId}")                           
-       public List<BookingRequest> getbytripid(@PathVariable("TripId") long srchid){
+       public ResponseEntity<List<BookingRequest>> getbytripid(@PathVariable("TripId") long srchid){
     	   Optional<List<BookingRequest>> book=this.service.findByTripCabId(srchid);
-    	   
-		return book.get();
+    	   TripCabInfo trip = this.service.findTripCabInfo(srchid);
+    	   if(trip.getStartTime()!=null) {
+    		   return ResponseEntity.status(261).body(null);
+    	   }
+		return ResponseEntity.status(HttpStatus.OK).body(book.get());
     	   
        }
 
@@ -64,7 +66,7 @@ public class Controller {
      System.out.print(entity.get());
      	BookingRequest bookingrequest=null;
      	if(entity.isPresent()) {
- System.out.print("hi");
+// System.out.print("hi");
      		bookingrequest=entity.get();
      			bookingrequest.setStatus(entryset.getStatus());
 
@@ -82,6 +84,12 @@ public class Controller {
       	 
     	return ResponseEntity.status(HttpStatus.OK).body(entryset1);
        }
+     
+     
+     
+     
+     
+            
         
 @GetMapping(path = "/bookings/status/{TripId}")
 public ResponseEntity<List<BookingRequest>> getFilteredBookings(@PathVariable("TripId") long tripId)
@@ -102,14 +110,24 @@ public ResponseEntity<BookingRequest> updatebytripidforshow(@PathVariable("TripI
 }
 
 
-@PutMapping("/employee/status/{employeeId}/{tripId}")
-public ResponseEntity<BookingRequest> storeEmployeeStatus(@PathVariable("employeeId")int employeeID,@PathVariable("tripId")long tripCabID)
+//@PutMapping("/employee/status/{employeeId}/{tripId}")
+//public ResponseEntity<BookingRequest> storeEmployeeStatus(@PathVariable("employeeId")String employeeID,@PathVariable("tripId")long tripCabID)
+//{
+//	// status = this.service.storeEmployeeStatus(employeeID);
+//	BookingRequest savedStatus = this.service.storeEmployeeStatus(employeeID);
+//	
+//	return ResponseEntity.status(HttpStatus.OK).body(savedStatus);
+//}
+
+
+//For storing status of Employee
+@PutMapping(path = "/employee/status/{employeeID}")
+public ResponseEntity<BookingRequest> storeEmployeeStatus(@PathVariable("employeeID")String employeeID)
 {
-	// status = this.service.storeEmployeeStatus(employeeID);
-	BookingRequest savedStatus = this.service.storeEmployeeStatus(employeeID);
-	
-	return ResponseEntity.status(HttpStatus.OK).body(savedStatus);
+BookingRequest savedStatus = this.service.storeEmployeeStatus(employeeID);
+return ResponseEntity.status(HttpStatus.OK).body(savedStatus);
 }
+
 //For updating the end status of cab
  @PutMapping("/updateme/{tripCabId}")
    public ResponseEntity<TripCabInfo> updatebytripCabID(@PathVariable("tripCabId")long tripCabID){
@@ -143,14 +161,17 @@ public ResponseEntity<BookingRequest> storeEmployeeStatus(@PathVariable("employe
 	}
 
 //For getting server time-startTime
-@GetMapping("getServerTime/{tripCabID}")
+@GetMapping(path="getServerTime/{tripCabID}")
 public TripCabInfo getBookingTime(@PathVariable("tripCabID") long tripCabID)
 {
 return this.service.getBookingTime(tripCabID);
 
 }
 
-
-
+@PutMapping(path = "/notification/{cabNumber}/{tripCabID}")
+public TripCabInfo getNotificationByNumber(@PathVariable("cabNumber") String cabNumber, @PathVariable("tripCabID") long tripCabID) {
+	TripCabInfo tripObj = this.service.getTripAssignedDetailsByCabNumberaftercancelling(cabNumber,tripCabID);
+	return tripObj;
+}
 
 }

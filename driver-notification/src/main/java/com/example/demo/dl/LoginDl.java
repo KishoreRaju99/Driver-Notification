@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.example.demo.entity.CabInfo;
-import com.example.demo.repository.CabInfoRepo;
+import com.example.demo.repo.CabInfoRepo;
 
 
 @Component

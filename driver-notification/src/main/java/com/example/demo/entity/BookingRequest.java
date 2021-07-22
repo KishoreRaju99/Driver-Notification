@@ -1,32 +1,33 @@
 package com.example.demo.entity;
 
-import java.time.LocalDate;
+
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.experimental.FieldDefaults;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
- @Setter
-@Document(collection = "Bookingrequest")
+@Document(collection = "BookingRequest")
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class BookingRequest {
+	
 	@Id
-	public long bookingId ;
-	public  int employeeId ;
-	public String employeeName;
-	public String source;
-	public String destination;
-	public String dropPoint;
-	LocalDateTime bookingTime;
+	long bookingId;
+	String employeeId;
+	String employeeName;
+	String source;
+	String destination;
+	String dropPoint;
+	LocalTime bookingTime;//
 	LocalTime timeSlot;
 	int addedManually;
 	long tripCabId;
@@ -34,10 +35,11 @@ public class BookingRequest {
 	LocalTime reachedTime;
 	String complaintDescription;
 	String remarks;
-	public String status;
+	String status;
 	String createdBy;
-	LocalDate createdDate;
+	LocalDateTime createdDate;//
 	String modifiedBy;
-	LocalDate modifiedDate;
+	LocalDateTime modifiedDate;//
 	int isDeleted;
+
 }

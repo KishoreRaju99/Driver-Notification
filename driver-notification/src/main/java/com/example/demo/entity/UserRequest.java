@@ -15,8 +15,7 @@ import lombok.experimental.FieldDefaults;
 @Component
 public class UserRequest {
 	
-	String loginId;
-	
+	String loginId;	
 	String password;
   
 }

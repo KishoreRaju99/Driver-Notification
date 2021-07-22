@@ -1,9 +1,6 @@
 package com.example.demo.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
-
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -57,11 +54,15 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 			.authorizeRequests().antMatchers("/authenticate").permitAll()
 			.antMatchers("/DriverLogin.html").permitAll()
 			.anyRequest().
-			 authenticated()
+			 authenticated().and().formLogin()
+			 .loginPage("/DriverLogin.html")
+			 
 			 .and()
 				.logout().logoutUrl("/logout")
+				
 				//back to login page
 				.logoutSuccessUrl("/DriverLogin.html")
+				.deleteCookies("JSESSIONID")
 				//delete jwt token after logout
 				.invalidateHttpSession(true)
 				.clearAuthentication(true);

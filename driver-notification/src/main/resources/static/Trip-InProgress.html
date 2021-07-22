@@ -60,52 +60,54 @@
 						<a href="#" data-toggle="dropdown" aria-expanded="false"> <img
 							class="cursor ms-4" src="images/Bell-icon.svg" alt="filter-icon"
 							title="Advanced Filter" /></a>
-						<div class="dropdown-menu m-0 advanced-filter">
-							<div class="container-fluid">
-								<div class="row">
-									<div class="col-md-12 pb-2 border-0 mt-2 close-filter">
-										<span class="text-style-title filter-title fw-bold">Notifications</span>
-										<button type="button" class="btn-close float-end cross-icon"
-											data-bs-dismiss="advanced-filter" aria-label="Close">
-										</button>
-									</div>
-									<div class="col-md-12 ps-0">
-										<div class="row mb-3">
-											<!--  <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                                                <li class="nav-item nav-1" role="presentation">
-                                                  <a class="nav-link active" id="pills-home-tab" aria-selected="true"></a>
-                                                </li>
+							
+<!-- 						<div class="dropdown-menu m-0 advanced-filter"> -->
+<!-- 							<div class="container-fluid"> -->
+<!-- 								<div class="row"> -->
+<!-- 									<div class="col-md-12 pb-2 border-0 mt-2 close-filter"> -->
+<!-- 										<span class="text-style-title filter-title fw-bold">Notifications</span> -->
+<!-- 										<button type="button" class="btn-close float-end cross-icon" -->
+<!-- 											data-bs-dismiss="advanced-filter" aria-label="Close"> -->
+<!-- 										</button> -->
+<!-- 									</div> -->
+<!-- 									<div class="col-md-12 ps-0"> -->
+<!-- 										<div class="row mb-3"> -->
+<!-- 											  <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist"> -->
+<!--                                                 <li class="nav-item nav-1" role="presentation"> -->
+<!--                                                   <a class="nav-link active" id="pills-home-tab" aria-selected="true"></a> -->
+<!--                                                 </li> -->
                                                                                                
-                                              </ul> -->
-											<div class="tab-content" id="pills-tabContent">
-												<div class="tab-pane active" id="pills-home" role="tabpanel"
-													aria-labelledby="pills-home-tab">
-													<div class="container-fluid">
-														<div class="row">
-															<div class="col-md-12 mt-2 mb-3 p-0" data-toggle="modal"
-																data-target="#tripstarted">
-																<p class="float-end indicator mt-0"></p>
-																<h5 class=""></h5>
-																<!-- <a class="float-start footer-link pb-4"><img
-                                                                        src="images/Map-table.svg" alt="map-icon"
-                                                                        class="mx-1 map-icon1"></a> -->
-															</div>
+<!--                                               </ul>  -->
+<!-- 											<div class="tab-content" id="pills-tabContent"> -->
+<!-- 												<div class="tab-pane active" id="pills-home" role="tabpanel" -->
+<!-- 													aria-labelledby="pills-home-tab"> -->
+<!-- 													<div class="container-fluid"> -->
+<!-- 														<div class="row"> -->
+<!-- 															<div class="col-md-12 mt-2 mb-3 p-0" data-toggle="modal" -->
+<!-- 																data-target="#tripstarted"> -->
+<!-- 																<p class="float-end indicator mt-0"></p> -->
+<!-- 																<h5 class=""></h5> -->
+<!-- 																<a class="float-start footer-link pb-4"><img -->
+<!--                                                                         src="images/Map-table.svg" alt="map-icon" -->
+<!--                                                                         class="mx-1 map-icon1"></a>  -->
+<!-- 															</div> -->
 
-														</div>
+<!-- 														</div> -->
 
-														<div class="col-md-6 float-start mt-1 mb-0 p-0">
+<!-- 														<div class="col-md-6 float-start mt-1 mb-0 p-0"> -->
 
-															<p class="mb-0 not-status"></p>
+<!-- 															<p class="mb-0 not-status"></p> -->
 
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
+<!-- 														</div> -->
+<!-- 													</div> -->
+<!-- 												</div> -->
+<!-- 											</div> -->
+<!-- 										</div> -->
+<!-- 									</div> -->
+<!-- 								</div> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
+
 					</div>
 					<!-- Notifications Part Ends Here -->
 
@@ -132,7 +134,8 @@
 												<h6 id="driver-profile1"></h6>
 												<h6 id="driver-profile2">Driver</h6>
 												<h6 id="driver-profile3"></h6>
-												<!-- <button type="button" class="btn btn-primary btn-lg pe-4">Log Out</button> -->
+												<button type="button" class="btn btn-primary btn-lg pe-4" onclick="logOut()">Log
+													Out</button>
 											</div>
 										</div>
 									</div>
@@ -248,7 +251,7 @@
 	<script src="js/jquery.min.js"></script>
 	<script src="js/popper.js"></script>
 	<script src="js/bootstrap.min.js"></script>
-	<script src="js/trip-inprogress.js"></script>
+	<script src="js/TripInProgress.js"></script>
 	<script>
 		$('.advanced-filter').click(function(event) {
 			event.stopPropagation();

@@ -1,7 +1,6 @@
-package com.example.demo.repository;
+package com.example.demo.repo;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
-
 import com.example.demo.entity.CabInfo;
 
 

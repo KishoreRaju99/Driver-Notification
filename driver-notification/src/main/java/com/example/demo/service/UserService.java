@@ -14,8 +14,8 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.entity.CabInfo;
 import com.example.demo.entity.DriverInfo;
-import com.example.demo.repository.CabInfoRepo;
-import com.example.demo.repository.DriverInfoRepo;
+import com.example.demo.repo.CabInfoRepo;
+import com.example.demo.repo.DriverInfoRepo;
 
 
 @Service
@@ -38,10 +38,6 @@ public class UserService implements UserDetailsService {
     	long driverId=cabInfo.getDriverId();
     	
     	DriverInfo driverInfo=this.driverInfoRepo.findByDriverId(driverId);
-    	
-    	
-		
-
         return new User(cabInfo.getCabNumber(),driverInfo.getPassword(),new ArrayList<>());
     }
 }

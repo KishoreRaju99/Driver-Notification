@@ -1,89 +1,89 @@
-//"http://localhost:8083//bookings/status" + id + "/" + status
-// var id = 101;
-
 var cabNumber = sessionStorage.getItem('commonFileCabNumber');
 var drivername = sessionStorage.getItem('commonFileDriverName');
-window.onload = screenOnLoadCalls;
+var TodayTripId = sessionStorage.getItem('commonFileTripId');
+
+ window.onload = screenOnLoadCalls;
 var xhr = new XMLHttpRequest();
 var xhrTime = new XMLHttpRequest();
 var time;
-//window.onload = tripInprogress;
+
+var OnProgress="OnProgress";
 var queryStr = window.location.search;
-
-var id = queryStr.split("=")[1];
-
-var status = queryStr.split("s=")[1];
+	
+var status= queryStr.split("s=")[1];
 var count;
 var r = 0;
 var show = "show";
-var noshow = "noshow";
+var noshow ="noshow";
 var arr;
 var startTime;
 
 
-function screenOnLoadCalls() {
+function screenOnLoadCalls(){
 
-	getServerTime();
-	tripInprogress();
-	driverProfile();
+getServerTime();
+tripInprogress();
+driverProfile();
 }
-function getServerTime() {
-	xhrTime.open("GET", "http://localhost:8083/getServerTime/" + id, true);
-	xhrTime.onreadystatechange = processServerTimeResponse;
-	xhrTime.send(null);
+function getServerTime(){
+xhrTime.open("GET", "http://localhost:8083/getServerTime/"+TodayTripId, true);
+
+xhrTime.onreadystatechange = processServerTimeResponse;
+
+xhrTime.send(null);
 }
 
+ 
+
+function processServerTimeResponse(){
+if (xhrTime.readyState == 4 && xhrTime.status == 200) {
+time = JSON.parse(xhrTime.responseText);
+
+var p1 = document.createElement("p");
+p1.className = "trip-started";
+
+//p1.innerHTML = "Trip Started At " + hour[0] + ":" + hour[1];
+var hour =time.startTime.split(":");
+if (hour[0] < 12) {
+if (hour[0] >= 10) {
+
+ 
+
+p1.innerHTML = "Trip Started At " + hour[0] + ":" + hour[1] + " AM";
+
+ 
+
+}
+else {
+if (hour[0] == 00) {
+p1.innerHTML = "Trip Started At " + "12" + ":" + hour[1] + " AM";
+}
+
+ 
 
 
-function processServerTimeResponse() {
-	if (xhrTime.readyState == 4 && xhrTime.status == 200) {
-		time = JSON.parse(xhrTime.responseText);
+else {
+p1.innerHTML = "Trip Started At " + "0" + hour[0] + ":" + hour[1] + " AM";
+}
+}
+}
+else {
+var hr = hour[0] - 12;
+if (hour[0] >= 10) {
 
-		var p1 = document.createElement("p");
-		p1.className = "trip-started";
-
-		//p1.innerHTML = "Trip Started At " + hour[0] + ":" + hour[1];
-		var hour = time.startTime.split(":");
-		if (hour[0] < 12) {
-			if (hour[0] >= 10) {
-
+p1.innerHTML = "Trip Started At " + hr + ":" + hour[1] + " PM";
 
 
-				p1.innerHTML = "Trip Started At " + hour[0] + ":" + hour[1] + " AM";
+}
 
+ 
 
-
-			}
-			else {
-				if (hour[0] == 00) {
-					p1.innerHTML = "Trip Started At " + "12" + ":" + hour[1] + " AM";
-				}
-
-
-
-
-				else {
-					p1.innerHTML = "Trip Started At " + "0" + hour[0] + ":" + hour[1] + " AM";
-				}
-			}
-		}
-		else {
-			var hr = hour[0] - 12;
-			if (hour[0] >= 10) {
-
-
-				p1.innerHTML = "Trip Started At " + hr + ":" + hour[1] + " PM";
-
-
-			}
-
-
-			else {
-				p1.innerHTML = "Trip Started At " + "0" + hr + ":" + hour[1] + " PM";
-			}
-		}
-		document.getElementById("triptime").appendChild(p1);
-	}
+else {
+p1.innerHTML = "Trip Started At " + "0" + hr + ":" + hour[1] + " PM";
+}
+}
+document.getElementById("triptime").appendChild(p1);
+}
 }
 
 
@@ -99,7 +99,7 @@ function processServerTimeResponse() {
 
 function tripInprogress() {
 
-	xhr.open("GET", "http://localhost:8083/bookings/status/" + id, true);
+	xhr.open("GET", "http://localhost:8083/bookings/status/"+TodayTripId , true);
 
 	xhr.onreadystatechange = processResponse;
 
@@ -120,7 +120,7 @@ function processResponse() {
 		if (hour[0] < 12) {
 			if (hour[0] >= 10) {
 
-				l.innerHTML = "<img src='images/Clock.svg' alt='icon' class='detail-icon p-0'>" + hour[0] + ":" + hour[1] + " AM";
+			l.innerHTML = "<img src='images/Clock.svg' alt='icon' class='detail-icon p-0'>" + hour[0] + ":" + hour[1] + " AM";
 
 			}
 			else {
@@ -153,14 +153,11 @@ function processResponse() {
 
 		var l3 = document.createElement('li');
 		l3.className = "trip-settings";
-		l3.innerHTML = "<img src='images/People.svg' alt='icon' class='detail-icon'>" + count + " Passengers ";
-
+		l3.innerHTML = "<img src='images/People.svg' alt='icon' class='detail-icon'>" + count + " Passengers ";	
 
 		document.getElementById("trip").appendChild(l);
 		document.getElementById("trip").appendChild(l2);
 		document.getElementById("trip").appendChild(l3);
-
-
 
 
 		for (var i = 0; i < arr.length; i++) {
@@ -211,7 +208,7 @@ function processResponse() {
 
 			var listitem2 = document.createElement('li');
 			listitem2.className = "Emp-ID";
-			listitem2.innerText = arr[i].employeeId;
+			listitem2.innerText = "EmpId:"+ arr[i].employeeId;
 
 			var listitem3 = document.createElement('li');
 			listitem3.className = "Address";
@@ -247,47 +244,50 @@ var sts;
 var ul;
 var selected;
 var sts1;
+var empId;
 function myfunction(radio) {
 	selected = radio.name;
 
 	var id = radio.closest("div").id;
 	var spiltid = id.replace("div7", "");
 	ul = document.getElementById("ul" + spiltid).getElementsByTagName("li")[1].innerText;
-	//alert(radio.id);
-	sts = radio.id.replace("radio-", "") - 1;
-	//alert(sts);
-	sts1 = radio.id;
-
+	empId = ul.split(":")[1];
+	
+	sts = radio.id.replace("radio-","")-1;
+	
+	sts1=radio.id;
+				
 }
 
-
-function notreached() {
-	document.getElementById("radio-" + sts).checked= true;
-	//alert("sts");
-}
-
+	
+	function notreached(){
+		document.getElementById("radio-"+sts).checked=true;
+		
+	}
+	
 
 
 function reached() {
-	let ab = Number(id);
-
-	//alert(id);
+	//let ab = Number(TodayTripId);
+	
+//alert(id);
 
 	var xhrReached = new XMLHttpRequest();
-	xhrReached.open("PUT", "http://localhost:8083/employee/status/" + ul + "/" + ab, true);
+	xhrReached.open("PUT", "http://localhost:8083/employee/status/"+empId, true);
 
 	xhrReached.onreadystatechange = function() {
 		if (xhrReached.readyState == 4 && xhrReached.status == 200) {
-
+			
 			r = r + 1;
-			//	alert(count + r);
-			document.getElementById(sts1).disabled   true;
-			document.getElementById("radio-" + sts).disabled = true;
-
-
+		//	alert(count + r);
+			document.getElementById(sts1).disabled=true;
+			document.getElementById("radio-"+sts).disabled=true;
+			
+				
 			if (count == r) {
 				$('#completed').modal('show');
 			}
+			
 		}
 	};
 
@@ -296,19 +296,19 @@ function reached() {
 
 
 function ok() {
-	//alert(id); 
-	let ab = Number(id);
+//alert(id); 
+let ab = Number(TodayTripId);
 	var xhrupdate = new XMLHttpRequest();
-	xhrupdate.open("PUT", "http://localhost:8083/updateme/" + ab, true);
+	xhrupdate.open("PUT", "http://localhost:8083/updateme/"+ab,true);
 	xhrupdate.onreadystatechange = function() {
 		if (xhrupdate.readyState == 4 && xhrupdate.status == 200) {
 			//sessionStorage.clear();
+			    
+			window.location.href= "No-Trip-Assigned-Page.html";
 
-			window.location.href = "No-Trip-Assigned-Page.html";
-
-
+			
 		}
-
+		
 
 	};
 	xhrupdate.send(null);
@@ -316,19 +316,19 @@ function ok() {
 
 // DRIVER PROFILE SCRIPT STARTS HERE
 
-//window.onload = driverProfile;
-
+ //window.onload = driverProfile;
+  
 function driverProfile() {
 
+	
 
+			var CabDriverName=document.getElementById("driver-profile1").innerText = drivername;
+			
+			var intials = CabDriverName.charAt(0);
+			var nameicon = $('#nameicon').text(intials);
 
-	var CabDriverName = document.getElementById("driver-profile1").innerText = drivername;
-
-	var intials = CabDriverName.charAt(0);
-	var nameicon = $('#nameicon').text(intials);
-
-
-	document.getElementById("driver-profile3").innerText = cabNumber;
+			
+			document.getElementById("driver-profile3").innerText = cabNumber;
 }
 // DRIVER PROFILE SCRIPT ENDS HERE
 
@@ -338,8 +338,8 @@ function driverProfile() {
 //ADMIN CONTACTS SCRIPT STARTS HERE
 var xhttp = new XMLHttpRequest();
 function adminContacts() {
-
-	xhttp.open("GET", "http://localhost:8083/adminContactDetails", true);
+	
+xhttp.open("GET", "http://localhost:8083/adminContactDetails", true);
 
 	xhttp.onreadystatechange = function() {
 
@@ -348,14 +348,24 @@ function adminContacts() {
 			response = JSON.parse(this.responseText);
 			for (var i = 0; i < response.length; i++) {
 
-
-				document.getElementById("adminContact" + i).innerHTML = "<label class='float-start mb-3' id='contacts1'><a class='link contact-number' href='#'>" + response[i].contactNumber + "</a>" + "  -  " + response[i].adminName + "</label>";
-
+				
+				document.getElementById("adminContact" + i).innerHTML = "<label class='float-start mb-3' id='contacts1'><a class='link contact-number' href='#'>" + response[i].phoneNumber + "</a>" + "  -  " + response[i].employeeName + "</label>";
 			}
 		}
 	};
 	xhttp.send();
-}
+	}
 
 
               //ADMIN CONTACTS SCRIPT ENDS HERE
+function logOut(){
+    	sessionStorage.clear();
+    	window.location.href =  "/logout";
+    	function preventBack() { 
+    	window.history.forward();
+    	 }  
+    setTimeout("preventBack()", 0);  
+    window.onunload = function () {
+     null 
+     };
+    }

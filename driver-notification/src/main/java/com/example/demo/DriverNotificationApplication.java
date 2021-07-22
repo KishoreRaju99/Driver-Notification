@@ -1,17 +1,22 @@
 package com.example.demo;
 
 import java.time.LocalDate;
-import java.util.Date;
+import java.time.LocalTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import com.example.demo.entity.BookingRequest;
 import com.example.demo.entity.CabInfo;
-import com.example.demo.repository.AdminContactsRepository;
-import com.example.demo.repository.BookingRepository;
-import com.example.demo.repository.CabInfoRepo;
-import com.example.demo.repository.TripCabInfoRepository;
+import com.example.demo.entity.DriverInfo;
+import com.example.demo.entity.EmployeeDetails;
+import com.example.demo.entity.TripCabInfo;
+import com.example.demo.repo.BookingRepository;
+import com.example.demo.repo.CabInfoRepo;
+import com.example.demo.repo.DriverInfoRepo;
+import com.example.demo.repo.EmployeeDetailsRepository;
+import com.example.demo.repo.TripCabInfoRepository;
 
 @SpringBootApplication
 public class DriverNotificationApplication {
@@ -22,14 +27,18 @@ public class DriverNotificationApplication {
 	
 	 @Autowired
 	 private BookingRepository repo; 
+	 
 	 @Autowired
 	 private TripCabInfoRepository triprepo;
+	 
 	 @Autowired
-	 private AdminContactsRepository AdminContactsReposs;
+	 private EmployeeDetailsRepository EmployeeReposs;
 	 
 	 @Autowired
 	 private CabInfoRepo repos;
 	 
+	 @Autowired
+	 private  DriverInfoRepo driverRepo;
 	
 	
 	@Bean
@@ -41,34 +50,38 @@ public class DriverNotificationApplication {
 			public void run(String... args) throws Exception {
 				
 				
-				CabInfo cabInfo=new CabInfo("TN50S6677", 101, "Swift", 10, "LC12D90",null , "Jawahar", 0, null, null, null, null);
+				CabInfo cabInfo=new CabInfo("TN50S6677", 101, "Swift", 10, "LC12D90",null , "Jawahar", null, null, null, null, 0);
+				
 				repos.save(cabInfo);			
 				
-				/*
-				 * AdminContacts contacts1 = new AdminContacts("+91- 123456789",
-				 * "Ragahavan",true); AdminContacts contacts2 = new
-				 * AdminContacts("+91-(123)8492003", "santhosh",true);
-				 * AdminContactsReposs.save(contacts1); AdminContactsReposs.save(contacts2);
-				 * 
-				 * 
-				 * BookingRequest book2=new
-				 * BookingRequest(10022,10722,"gokul","alphacity","shollinganallur","velachery",
-				 * LocalDateTime.now(),LocalTime.now(),0,10002,null,null,null,null,"assigned",
-				 * null,null,null,null,0); TripCabInfo tripdetails = new TripCabInfo(10001,
-				 * "TN8S6677", 10, "Bayline", "Tambaram", "Shollingnallur", LocalDate.now(),
-				 * LocalTime.now(), 10,2,8,LocalTime.of(10, 30), null, null, null, null, null,
-				 * null, 0); triprepo.save(tripdetails); repo.save(book2);
-				 * 
-				 * DriverProfile profile = new DriverProfile("Jawahar","Driver","TN8S6677");
-				 * DriverProfileRepos.save(profile);
-				 */
+				DriverInfo driverInfo = new DriverInfo(101, "Jawahar", "1234567890", 0, null, null, null, null, null, null, 0);
+				
+				driverRepo.save(driverInfo);
+				
+				
+				EmployeeDetails contacts1 = new EmployeeDetails("1001","Ragahavan",null,912345678,0,0,null,null,null,null,null,null,null,null,0); 	
+				EmployeeDetails contacts2 = new EmployeeDetails("1002", "santhosh",null,912384920,0,0,null,null,null,null,null,null,null,null,0);
+				
+				EmployeeReposs.save(contacts1); 
+				EmployeeReposs.save(contacts2);
 
-
+				
+				
+				TripCabInfo tripdetails = new TripCabInfo(10014,"TN50S6677","Swift",104,"Bayline","Tambaram",LocalDate.now() ,
+						                                   LocalTime.now(),10,2,8,"Assigned",null,null,null,null,null,null,0);
+				
+				triprepo.save(tripdetails);
+			
+				
+				
+				BookingRequest book2=new BookingRequest(100144,"10723","Kishore","alphacity","shollinganallur","velachery",
+						                                LocalTime.now(),LocalTime.now(),0,10014,null,null,null,null,"Assigned",null,null,null,null,0);
+				
+				repo.save(book2);
+		
 			}
 		};
 	}
 	
 	
 	}
-
-
