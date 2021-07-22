@@ -25,7 +25,7 @@ public class TripCabInfo {
 	long tripCabId;
     String cabNumber;
     String cabModel;
-    int driverId;//ID
+    int driverId;
     String source;
     String destination;
     LocalDate dateOfTravel;
@@ -33,13 +33,13 @@ public class TripCabInfo {
     int totalSeats;
     int remainingSeats;
     int allocatedSeats;
-    String status;//
+    String status;
     LocalTime startTime;
     LocalTime endTime;  
     String createdBy;
-    LocalDateTime createdDate;//
+    LocalDateTime createdDate;
     String modifiedBy;
-    LocalDateTime modifiedDate;//
+    LocalDateTime modifiedDate;
     int isDeleted;
 	
 }

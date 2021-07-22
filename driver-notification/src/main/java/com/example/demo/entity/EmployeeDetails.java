@@ -22,18 +22,18 @@ public class EmployeeDetails {
     String employeeId;
 	String employeeName;
 	String employeMail;
-	long phoneNumber;//
-	int isAdmin; //
-	int isBlocked; //
-	LocalDateTime blockedDate; //
+	long phoneNumber;
+	int isAdmin; 
+	int isBlocked;
+	LocalDateTime blockedDate; 
 	String domain;
 	String domainLead;
 	String projectName;
 	String createdBy;
 	LocalDate createdDate;
 	String modifieBy;
-	LocalDateTime modifiedDate;//
-	int isDeleted; //
+	LocalDateTime modifiedDate;
+	int isDeleted; 
 	
 	
 	

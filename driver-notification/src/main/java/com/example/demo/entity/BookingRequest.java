@@ -27,7 +27,7 @@ public class BookingRequest {
 	String source;
 	String destination;
 	String dropPoint;
-	LocalTime bookingTime;//
+	LocalTime bookingTime;
 	LocalTime timeSlot;
 	int addedManually;
 	long tripCabId;
@@ -37,9 +37,9 @@ public class BookingRequest {
 	String remarks;
 	String status;
 	String createdBy;
-	LocalDateTime createdDate;//
+	LocalDateTime createdDate;
 	String modifiedBy;
-	LocalDateTime modifiedDate;//
+	LocalDateTime modifiedDate;
 	int isDeleted;
 
 }

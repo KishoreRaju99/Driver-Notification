@@ -19,15 +19,15 @@ public class DriverInfo {
 	
 
 	@Id
-	long driverId; //datatype
+	long driverId; 
 	String driverName;
 	String password;
 	int driverNumber;
 	String licenseNumber;
-	LocalDate expiryDate; //local
-	String createdBy; //
-	LocalDate createdDate;// 
+	LocalDate expiryDate; 
+	String createdBy; 
+	LocalDate createdDate;
 	String modifiedBy;//
-	LocalDateTime modifiedDate; //
-	int isDeleted; //
+	LocalDateTime modifiedDate; 
+	int isDeleted; 
 }

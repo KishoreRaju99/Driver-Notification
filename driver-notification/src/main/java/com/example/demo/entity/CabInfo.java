@@ -29,13 +29,13 @@ public class CabInfo {
 	String  cabModel;
 	int availableSeats;
 	String insuranceNumber;
-	Date insuranceExpiryDate; // name
+	Date insuranceExpiryDate; 
 	String  driverName;
 	String createdBy;
-	LocalDate createdDate; //changed order
+	LocalDate createdDate; 
 	String modifiedBy;
-	LocalDateTime modifiedDate; //
-	int isDeleted; //changed order
+	LocalDateTime modifiedDate; 
+	int isDeleted;
 	
 	
 }
