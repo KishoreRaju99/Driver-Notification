@@ -11,17 +11,19 @@ import com.example.demo.entity.TripCabInfo;
 import com.example.demo.repo.CabInfoRepo;
 import com.example.demo.repo.DriverNotificationRepository;
 import com.example.demo.repo.EmployeeDetailsRepository;
+import com.example.demo.service.TripService;
 
 
 @RestController
 public class DriverNotificationController {
 
-	
+	@Autowired
+	private TripService service;
 	@Autowired
 	private DriverNotificationRepository repofordrivernotification;
 
 	@Autowired
-	private EmployeeDetailsRepository employeeRepo; //reposs
+	private EmployeeDetailsRepository employeeRepo; 
 
 	@Autowired
 	private CabInfoRepo cabInfoRepo;
@@ -46,7 +48,8 @@ public class DriverNotificationController {
 
 	@GetMapping(path = "/adminContactDetails")
 	public List<EmployeeDetails> getAdminContacts() {
-		List<EmployeeDetails> admincontact = this.employeeRepo.findAll();
+		List<EmployeeDetails> admincontact = this.service.findByIsAdmin();
+		
 		return admincontact;
 
 	}

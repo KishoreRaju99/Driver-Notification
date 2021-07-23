@@ -59,8 +59,8 @@ public class DriverNotificationApplication {
 				driverRepo.save(driverInfo);
 				
 				
-				EmployeeDetails contacts1 = new EmployeeDetails("1001","Ragahavan",null,912345678,0,0,null,null,null,null,null,null,null,null,0); 	
-				EmployeeDetails contacts2 = new EmployeeDetails("1002", "santhosh",null,912384920,0,0,null,null,null,null,null,null,null,null,0);
+				EmployeeDetails contacts1 = new EmployeeDetails("1001","Ragahavan",null,9123456780l,1,0,null,null,null,null,null,null,null,null,0); 	
+				EmployeeDetails contacts2 = new EmployeeDetails("1002", "santhosh",null,9123849200l,1,0,null,null,null,null,null,null,null,null,0);
 				
 				EmployeeReposs.save(contacts1); 
 				EmployeeReposs.save(contacts2);
@@ -74,7 +74,7 @@ public class DriverNotificationApplication {
 			
 				
 				
-				BookingRequest book2=new BookingRequest(100144,"10723","Kishore","alphacity","shollinganallur","velachery",
+				BookingRequest book2=new BookingRequest(1001449,"10723","vignesh","alphacity","shollinganallur","velachery",
 						                                LocalTime.now(),LocalTime.now(),0,10014,null,null,null,null,"Assigned",null,null,null,null,0);
 				
 				repo.save(book2);

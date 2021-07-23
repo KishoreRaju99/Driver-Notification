@@ -14,7 +14,7 @@ import lombok.experimental.FieldDefaults;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Document(collection="Employee")
+@Document(collection="EmployeedDetails")
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class EmployeeDetails {
 

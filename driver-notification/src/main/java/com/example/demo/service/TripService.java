@@ -6,8 +6,10 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.example.demo.entity.BookingRequest;
+import com.example.demo.entity.EmployeeDetails;
 import com.example.demo.entity.TripCabInfo;
 import com.example.demo.repo.BookingRepository;
+import com.example.demo.repo.EmployeeDetailsRepository;
 import com.example.demo.repo.TripCabInfoRepository;
 
 
@@ -19,6 +21,11 @@ public class TripService {
 
 	@Autowired
 	private TripCabInfoRepository triprepo;
+	
+	@Autowired
+	private EmployeeDetailsRepository emprepo;
+	
+	
 
 
 public Optional<List<BookingRequest>> findByTripCabId(long srchid){
@@ -30,7 +37,11 @@ public Optional<List<BookingRequest>> findShowusers(long srchid){
 	return this.repo.findShowUsers(srchid);
 	
 }
-
+public List<EmployeeDetails> findByIsAdmin(){
+	
+	return this.emprepo.findByIsAdmin();
+	
+}
 
 public BookingRequest storeEmployeeStatus(String employeeID) {
 	BookingRequest status= repo.findByEmployeeId(employeeID);
@@ -142,8 +153,6 @@ public TripCabInfo findTripCabInfo(long srchid) {
 	Optional<TripCabInfo> trip = this.triprepo.findById(srchid);
 	return trip.get();
 }
-
-
 
 
 }
