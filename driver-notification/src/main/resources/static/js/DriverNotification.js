@@ -21,11 +21,10 @@ function onloadFunctionCalls(){
 	setInterval('driverNotification()', 5000);
 	driverProfile();
 }
-/*var search=window.location.search;
- var id = search.split("=")[1];*/ 
+
  
 function driverNotification() {
-	 //temporary comment
+	 
 
 	xhttp.open("GET", "http://localhost:8083/notification/"+cabId, true);
 
@@ -104,7 +103,7 @@ function driverNotification() {
 
 // DRIVER PROFILE SCRIPT STARTS HERE
 
-//  window.onload = driverProfile;
+
 function driverProfile() {
 
 	xhttp.open("GET", "http://localhost:8083/driverProfile/"+cabId, false);//TN50D7890

@@ -8,31 +8,29 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.entity.CabInfo;
 import com.example.demo.entity.EmployeeDetails;
 import com.example.demo.entity.TripCabInfo;
-import com.example.demo.repo.CabInfoRepo;
-import com.example.demo.repo.DriverNotificationRepository;
-import com.example.demo.repo.EmployeeDetailsRepository;
-import com.example.demo.service.TripService;
+import com.example.demo.service.DriverNotificationService;
+
 
 
 @RestController
 public class DriverNotificationController {
 
 	@Autowired
-	private TripService service;
-	@Autowired
-	private DriverNotificationRepository repofordrivernotification;
-
-	@Autowired
-	private EmployeeDetailsRepository employeeRepo; 
-
-	@Autowired
-	private CabInfoRepo cabInfoRepo;
+	private DriverNotificationService notificationservice;
+	
+//	@Autowired
+//	private DriverNotificationRepository repofordrivernotification;
+//
+//	
+//
+//	@Autowired
+//	private CabInfoRepo cabInfoRepo;
 
 	// FOR DRIVER'S NOTIFICATION
 
 	@GetMapping(path = "/notification/{cabNumber}")
 	public TripCabInfo getNotificationByCabNumber(@PathVariable String cabNumber) {
-		TripCabInfo tripObj = this.repofordrivernotification.getTripAssignedDetailsByCabNumber(cabNumber);
+		TripCabInfo tripObj = this.notificationservice.getTripAssignedDetailsByCabNumber(cabNumber);
 		return tripObj;
 	}
 
@@ -40,7 +38,7 @@ public class DriverNotificationController {
 
 	@GetMapping(path = "/driverProfile/{cabNumber}")
 	public CabInfo getProfileByCabNumber(@PathVariable String cabNumber) {
-		CabInfo driverprofile = this.cabInfoRepo.findByCabNumber(cabNumber);
+		CabInfo driverprofile = this.notificationservice.findByCabNumber(cabNumber);
 		return driverprofile;
 	}
 
@@ -48,8 +46,7 @@ public class DriverNotificationController {
 
 	@GetMapping(path = "/adminContactDetails")
 	public List<EmployeeDetails> getAdminContacts() {
-		List<EmployeeDetails> admincontact = this.service.findByIsAdmin();
-		
+		List<EmployeeDetails> admincontact = this.notificationservice.findByIsAdmin();
 		return admincontact;
 
 	}

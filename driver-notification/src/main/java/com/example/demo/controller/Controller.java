@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.entity.BookingRequest;
 import com.example.demo.entity.TripCabInfo;
 import com.example.demo.repo.BookingRepository;
+import com.example.demo.service.TripInProgressService;
 import com.example.demo.service.TripService;
 
 @RestController
@@ -20,6 +21,9 @@ public class Controller {
 
 	@Autowired
 	TripService service;
+	
+	@Autowired
+	TripInProgressService serviceforinprogress;
 	
 	@Autowired
 	private BookingRepository repo;
@@ -95,7 +99,7 @@ public class Controller {
 public ResponseEntity<List<BookingRequest>> getFilteredBookings(@PathVariable("TripId") long tripId)
 {
 	//System.out.println(tripId);
-	List<BookingRequest> requests = this.service.findShowusers(tripId).get();
+	List<BookingRequest> requests = this.serviceforinprogress.findShowusers(tripId).get();
 	
 	return ResponseEntity.status(HttpStatus.OK).body(requests);
 }
@@ -124,7 +128,7 @@ public ResponseEntity<BookingRequest> updatebytripidforshow(@PathVariable("TripI
 @PutMapping(path = "/employee/status/{employeeID}")
 public ResponseEntity<BookingRequest> storeEmployeeStatus(@PathVariable("employeeID")String employeeID)
 {
-BookingRequest savedStatus = this.service.storeEmployeeStatus(employeeID);
+BookingRequest savedStatus = this.serviceforinprogress.storeEmployeeStatus(employeeID);
 return ResponseEntity.status(HttpStatus.OK).body(savedStatus);
 }
 
@@ -133,7 +137,7 @@ return ResponseEntity.status(HttpStatus.OK).body(savedStatus);
    public ResponseEntity<TripCabInfo> updatebytripCabID(@PathVariable("tripCabId")long tripCabID){
     	
     		 
-    		TripCabInfo savedStatus = this.service.updateTrip(tripCabID); 
+    		TripCabInfo savedStatus = this.serviceforinprogress.updateTrip(tripCabID); 
     	 
     	 
     	 
@@ -164,7 +168,7 @@ return ResponseEntity.status(HttpStatus.OK).body(savedStatus);
 @GetMapping(path="getServerTime/{tripCabID}")
 public TripCabInfo getBookingTime(@PathVariable("tripCabID") long tripCabID)
 {
-return this.service.getBookingTime(tripCabID);
+return this.serviceforinprogress.getBookingTime(tripCabID);
 
 }
 

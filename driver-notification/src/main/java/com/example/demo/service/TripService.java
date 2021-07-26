@@ -6,10 +6,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.example.demo.entity.BookingRequest;
-import com.example.demo.entity.EmployeeDetails;
 import com.example.demo.entity.TripCabInfo;
 import com.example.demo.repo.BookingRepository;
-import com.example.demo.repo.EmployeeDetailsRepository;
 import com.example.demo.repo.TripCabInfoRepository;
 
 
@@ -22,50 +20,12 @@ public class TripService {
 	@Autowired
 	private TripCabInfoRepository triprepo;
 	
-	@Autowired
-	private EmployeeDetailsRepository emprepo;
-	
-	
 
 
 public Optional<List<BookingRequest>> findByTripCabId(long srchid){
 	return this.repo.findByTripCabId(srchid);
 	
 }
-
-public Optional<List<BookingRequest>> findShowusers(long srchid){
-	return this.repo.findShowUsers(srchid);
-	
-}
-public List<EmployeeDetails> findByIsAdmin(){
-	
-	return this.emprepo.findByIsAdmin();
-	
-}
-
-public BookingRequest storeEmployeeStatus(String employeeID) {
-	BookingRequest status= repo.findByEmployeeId(employeeID);
-	if (status != null) {
-		status.setStatus("Reached");
-		status.setReachedTime(LocalTime.now());
-	    repo.save(status);
-	}
-	return status;
-	
-
-}
-
-
-
-//For updating the end status of cab
-public TripCabInfo updateTrip(long tripCabId) {
-	Optional<TripCabInfo> save= triprepo.findById(tripCabId);
-	TripCabInfo status= save.get();
-	status.setEndTime(LocalTime.now());
-	status.setStatus("Completed");
-	return triprepo.save(status);
-}
-
 
 
 public List<TripCabInfo> getTripDetails(long tripCabId) {
@@ -131,12 +91,7 @@ public TripCabInfo updateTripforOngoing(long tripCabID) {
 	
 }
 
-//For getting server time-startTime
-public TripCabInfo getBookingTime(long tripCabID) {
 
-Optional<TripCabInfo> save= triprepo.findById(tripCabID);
-return save.get();
-}
 
 public TripCabInfo getTripAssignedDetailsByCabNumberaftercancelling(String cabNumber,long tripCabId) {
 
