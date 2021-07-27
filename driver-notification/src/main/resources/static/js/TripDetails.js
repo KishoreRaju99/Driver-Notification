@@ -479,23 +479,7 @@ xhttp.open("GET", "http://localhost:8083/adminContactDetails", true);
 	xhttp.send();
 	}
 
-//ADMIN CONTACTS SCRIPT ENDS HERE
-/*function tripaftercancelling() {
-                    var xhrupdate = new XMLHttpRequest();              
-    xhrupdate.open("PUT",  "http://localhost:8083/notification/"+cabNumber, true);
- 
-    xhrupdate.onreadystatechange = processResponseforCabInfoforcancelling();
- 
-    xhrupdate.send(null);
-}
- 
-function processResponseforCabInfoforcancelling() {
- 
-    if (xhrupdate.readyState == 4 && xhrupdate.status == 200) {                       
-                 window.location.href= "No-Trip-Assigned-Page.html";
-                 }
-                 }  
-*/
+
 
 function tripaftercancelling() {
 

@@ -10,21 +10,11 @@ import com.example.demo.entity.EmployeeDetails;
 import com.example.demo.entity.TripCabInfo;
 import com.example.demo.service.DriverNotificationService;
 
-
-
 @RestController
 public class DriverNotificationController {
 
 	@Autowired
 	private DriverNotificationService notificationservice;
-	
-//	@Autowired
-//	private DriverNotificationRepository repofordrivernotification;
-//
-//	
-//
-//	@Autowired
-//	private CabInfoRepo cabInfoRepo;
 
 	// FOR DRIVER'S NOTIFICATION
 

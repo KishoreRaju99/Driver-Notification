@@ -1,6 +1,5 @@
 package com.example.demo.controller;
 
-
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,36 +18,34 @@ import com.example.demo.entity.UserRequest;
 import com.example.demo.loginbl.LoginBl;
 import com.example.demo.repo.CabInfoRepo;
 
-
-@CrossOrigin(origins = {"*"})
+@CrossOrigin(origins = { "*" })
 @RestController
 public class LoginController {
 
-    @Autowired
-    private LoginBl loginBl;
+	@Autowired
+	private LoginBl loginBl;
 
-    
-    @Autowired
-    private CabInfoRepo cabInfoRepo;
-   
-    @PostMapping("/authenticate")
-    public ResponseEntity<String> authenticate(@RequestBody UserRequest userRequest) throws Exception{
-    	try {
-        	//controller->bl->Dl->Repo->Db
-    		 return ResponseEntity.ok(loginBl.validateUser(userRequest));
-    	}
-    	catch (BadCredentialsException |  UsernameNotFoundException e) {
+	@Autowired
+	private CabInfoRepo cabInfoRepo;
+
+	@PostMapping("/authenticate")
+	public ResponseEntity<String> authenticate(@RequestBody UserRequest userRequest) throws Exception {
+		try {
+			// controller->bl->Dl->Repo->Db
+			return ResponseEntity.ok(loginBl.validateUser(userRequest));
+		} catch (BadCredentialsException | UsernameNotFoundException e) {
 			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Bad Credential");
-			
-		} 
 
-}
-    	@GetMapping("/CabInfo/{cabNumber}")
-    	public ResponseEntity<CabInfo> cabInfo(@PathVariable("cabNumber") String cabNumber){
-    		Optional<CabInfo> cab = this.cabInfoRepo.findById(cabNumber);
-    		CabInfo cabInfo = cab.get();
-    		
-    		return ResponseEntity.status(HttpStatus.OK).body(cabInfo); 
-    		
-    	}
+		}
+
+	}
+
+	@GetMapping("/CabInfo/{cabNumber}")
+	public ResponseEntity<CabInfo> cabInfo(@PathVariable("cabNumber") String cabNumber) {
+		Optional<CabInfo> cab = this.cabInfoRepo.findById(cabNumber);
+		CabInfo cabInfo = cab.get();
+
+		return ResponseEntity.status(HttpStatus.OK).body(cabInfo);
+
+	}
 }

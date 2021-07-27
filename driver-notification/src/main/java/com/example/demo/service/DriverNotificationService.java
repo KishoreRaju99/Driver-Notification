@@ -11,45 +11,38 @@ import com.example.demo.repo.CabInfoRepo;
 import com.example.demo.repo.DriverNotificationRepository;
 import com.example.demo.repo.EmployeeDetailsRepository;
 
-
 @Service
 public class DriverNotificationService {
-
-	
 
 	@Autowired
 	public DriverNotificationRepository repofordrivernotification;
 
-	
-
 	@Autowired
 	public CabInfoRepo cabInfoRepo;
-	
+
 	@Autowired
 	public EmployeeDetailsRepository employeedetailsrepo;
-	
-	//driver profile
-	
+
+	// driver profile
+
 	public CabInfo findByCabNumber(String cabNumber) {
-		CabInfo cabinfo= this.cabInfoRepo.findByCabNumber(cabNumber);
+		CabInfo cabinfo = this.cabInfoRepo.findByCabNumber(cabNumber);
 		return cabinfo;
-		
-	
+
 	}
-	
-	//notification
-	
+
+	// notification
+
 	public TripCabInfo getTripAssignedDetailsByCabNumber(String cabNumber) {
-		TripCabInfo tripcabinfo=this.repofordrivernotification.getTripAssignedDetailsByCabNumber(cabNumber);
+		TripCabInfo tripcabinfo = this.repofordrivernotification.getTripAssignedDetailsByCabNumber(cabNumber);
 		return tripcabinfo;
-		
-		
+
 	}
 	// admin contact
-	
-	public List<EmployeeDetails> findByIsAdmin(){
-		 List<EmployeeDetails>  isAdmin = this.employeedetailsrepo.findByIsAdmin();
+
+	public List<EmployeeDetails> findByIsAdmin() {
+		List<EmployeeDetails> isAdmin = this.employeedetailsrepo.findByIsAdmin();
 		return isAdmin;
-		
+
 	}
 }

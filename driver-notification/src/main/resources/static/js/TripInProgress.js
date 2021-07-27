@@ -42,7 +42,7 @@ time = JSON.parse(xhrTime.responseText);
 var p1 = document.createElement("p");
 p1.className = "trip-started";
 
-//p1.innerHTML = "Trip Started At " + hour[0] + ":" + hour[1];
+
 var hour =time.startTime.split(":");
 if (hour[0] < 12) {
 if (hour[0] >= 10) {
@@ -268,10 +268,7 @@ function myfunction(radio) {
 
 
 function reached() {
-	//let ab = Number(TodayTripId);
 	
-//alert(id);
-
 	var xhrReached = new XMLHttpRequest();
 	xhrReached.open("PUT", "http://localhost:8083/employee/status/"+empId, true);
 
@@ -296,7 +293,6 @@ function reached() {
 
 
 function ok() {
-//alert(id); 
 let ab = Number(TodayTripId);
 	var xhrupdate = new XMLHttpRequest();
 	xhrupdate.open("PUT", "http://localhost:8083/updateme/"+ab,true);
