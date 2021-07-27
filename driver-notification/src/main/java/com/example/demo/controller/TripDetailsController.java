@@ -15,13 +15,13 @@ import com.example.demo.entity.BookingRequest;
 import com.example.demo.entity.TripCabInfo;
 import com.example.demo.repo.BookingRepository;
 import com.example.demo.service.TripInProgressService;
-import com.example.demo.service.TripService;
+import com.example.demo.service.TripDetailsService;
 
 @RestController
 public class TripDetailsController {
 
 	@Autowired
-	TripService service;
+	TripDetailsService service;
 
 	@Autowired
 	TripInProgressService serviceforinprogress;
@@ -81,7 +81,7 @@ public class TripDetailsController {
 
 	@PutMapping("/update/for/{TripId}")
 	public ResponseEntity<BookingRequest> updatebytripid(@PathVariable("TripId") Long id,
-			@RequestBody List<BookingRequest> entryset) {
+	@RequestBody List<BookingRequest> entryset) {
 		System.out.println(entryset);
 
 		BookingRequest entryset1 = service.updatebytripid(id, entryset);

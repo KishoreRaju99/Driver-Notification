@@ -74,7 +74,7 @@ public class DriverNotificationApplication {
 //			
 //				
 //				
-//				BookingRequest book2=new BookingRequest(1001449,"10723","vignesh","alphacity","shollinganallur","velachery",
+//				BookingRequest book2=new BookingRequest(106,"10723","vicky","alphacity","shollinganallur","velachery",
 //						                                LocalTime.now(),LocalTime.now(),0,10014,null,null,null,null,"Assigned",null,null,null,null,0);
 //				
 //				repo.save(book2);

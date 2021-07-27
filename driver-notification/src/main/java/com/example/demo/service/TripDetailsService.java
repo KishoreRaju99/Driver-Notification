@@ -12,7 +12,7 @@ import com.example.demo.repo.TripCabInfoRepository;
 
 
 @Service(value="Service")
-public class TripService {
+public class TripDetailsService {
 	
 	@Autowired
     private BookingRepository repo;

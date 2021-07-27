@@ -78,8 +78,6 @@ function driverNotification() {
 
 				}
 
-
-
 				document.getElementById("notification-details").innerHTML = " <button type='button' class='btn btn-primary' data-toggle='modal' data-target=''#exampleModal' onclick='tripDetails()' >" + "<h5 class='text-center fw-bold'>You have been assigned a trip</h5>" + "<img src='images/Map-table.svg' alt='map-icon' class='mx-1 map-icon1'>" +
 					response.source + " -> " + response.destination + " @ " + slotTime + "</button>";
 

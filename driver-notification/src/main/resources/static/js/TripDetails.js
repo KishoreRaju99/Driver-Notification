@@ -247,24 +247,6 @@ function processResponseToGetNoShow() {
 	}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //rohit - beg
 function recheckCount(){
 //alert("hi");
@@ -284,28 +266,30 @@ function processResponseBeforeStart(){
     var arr = JSON.parse(xhr.responseText);
 	countBeforeStart = arr.length;   
 		
-		if(count < countBeforeStart){
+		if(count != countBeforeStart){
+			
 		//	alert("new person has been added");
-			document.getElementById('starttrip').disabled = true;
-			var passengercount=document.getElementById('uldetails');
-			while(passengercount.firstChild){
-				passengercount.removeChild(passengercount.firstChild);
-			}
-			
-			if(countBeforeStart==undefined){
-				l3.innerHTML = "<img src='images/People.svg' alt='icon' id='Passengercount' class='detail-icon'>" + countBeforeStart + " Passengers ";
-			}
-			
-			
-			 constructDataToTable(xhr.responseText);
-			
-			var parentdiv=document.getElementById('divid');
-			while(parentdiv.firstChild){
-				parentdiv.removeChild(parentdiv.firstChild);
-				
-			}
-			createtable(arr);
-			count = countBeforeStart;
+//			document.getElementById('starttrip').disabled = true;
+//			var passengercount=document.getElementById('uldetails');
+//			while(passengercount.firstChild){
+//				passengercount.removeChild(passengercount.firstChild);
+//			}
+//			
+//			if(countBeforeStart==undefined){
+//				l3.innerHTML = "<img src='images/People.svg' alt='icon' id='Passengercount' class='detail-icon'>" + countBeforeStart + " Passengers ";
+//			}
+//			
+//			
+//			 constructDataToTable(xhr.responseText);
+//			
+//			var parentdiv=document.getElementById('divid');
+//			while(parentdiv.firstChild){
+//				parentdiv.removeChild(parentdiv.firstChild);
+//				
+//			}
+//			createtable(arr);
+//			count = countBeforeStart;
+
 			window.location.reload();
 		return false;
 		}
@@ -313,9 +297,6 @@ function processResponseBeforeStart(){
 	return true;
 		}
 }
-
-
-
 
 
 
