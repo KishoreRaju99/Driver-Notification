@@ -15,8 +15,7 @@ import lombok.experimental.FieldDefaults;
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Document(collection = "DriverInfo")
-public class DriverInfo {
-	
+public class DriverInfo {	
 
 	@Id
 	long driverId; 
@@ -30,4 +29,5 @@ public class DriverInfo {
 	String modifiedBy;//
 	LocalDateTime modifiedDate; 
 	int isDeleted; 
+
 }

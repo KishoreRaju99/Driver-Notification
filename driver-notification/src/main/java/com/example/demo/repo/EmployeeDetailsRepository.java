@@ -10,8 +10,7 @@ import com.example.demo.entity.EmployeeDetails;
 
 
 @Repository
-public interface EmployeeDetailsRepository extends MongoRepository<EmployeeDetails, Integer> {
-
+public interface EmployeeDetailsRepository extends MongoRepository<EmployeeDetails, String> {
 	
 	 @Query(value="{ isAdmin: 1}")
 	 List<EmployeeDetails> findByIsAdmin();

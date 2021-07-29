@@ -6,8 +6,10 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.example.demo.entity.BookingRequest;
+import com.example.demo.entity.EmployeeDetails;
 import com.example.demo.entity.TripCabInfo;
 import com.example.demo.repo.BookingRepository;
+import com.example.demo.repo.EmployeeDetailsRepository;
 import com.example.demo.repo.TripCabInfoRepository;
 
 
@@ -19,7 +21,8 @@ public class TripDetailsService {
 
 	@Autowired
 	private TripCabInfoRepository triprepo;
-	
+	@Autowired
+	EmployeeDetailsRepository emprepo;
 
 
 public Optional<List<BookingRequest>> findByTripCabId(long srchid){
@@ -44,6 +47,9 @@ public BookingRequest updatebytripid(long Id,List<BookingRequest> entryset)
 		 
 		 if(!(bookingrequest.getStatus().equals("Cancelled"))) {
    		 bookingrequest.setStatus("Noshow");
+ 		 EmployeeDetails employee=emprepo.findById( bookingrequest.getEmployeeId()).get();
+   		 employee.setIsBlocked(1);
+   		 emprepo.save(employee);
    		 repo.save(bookingrequest);
 		 }
 		

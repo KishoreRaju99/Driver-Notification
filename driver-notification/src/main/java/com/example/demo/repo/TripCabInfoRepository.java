@@ -9,8 +9,7 @@ import com.example.demo.entity.TripCabInfo;
 public interface TripCabInfoRepository extends MongoRepository<TripCabInfo, Long> {
 
 
-	List<TripCabInfo> findTripDetailsByTripCabId(long tripCabId);
-	
+	List<TripCabInfo> findTripDetailsByTripCabId(long tripCabId);	
 	
 	Optional<TripCabInfo> findByCabNumberAndTripCabId(String cabNumber,long tripCabId);
 	

@@ -33,8 +33,6 @@ public class EmployeeDetails {
 	LocalDate createdDate;
 	String modifieBy;
 	LocalDateTime modifiedDate;
-	int isDeleted; 
-	
-	
+	int isDeleted; 		
 	
 }

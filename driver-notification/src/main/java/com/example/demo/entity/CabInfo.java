@@ -19,9 +19,7 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Document(collection = "CabInfo")
 
-public class CabInfo {
-	
-	
+public class CabInfo {	
 	
 	@Id
 	String  cabNumber;
