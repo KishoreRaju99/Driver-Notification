@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import com.example.demo.entity.CabInfo;
 import com.example.demo.entity.EmployeeDetails;
 import com.example.demo.entity.TripCabInfo;
-import com.example.demo.repo.CabInfoRepo;
+import com.example.demo.repo.CabInfoRepository;
 import com.example.demo.repo.DriverNotificationRepository;
 import com.example.demo.repo.EmployeeDetailsRepository;
 
@@ -18,7 +18,7 @@ public class DriverNotificationService {
 	public DriverNotificationRepository repofordrivernotification;
 
 	@Autowired
-	public CabInfoRepo cabInfoRepo;
+	public CabInfoRepository cabInfoRepo;
 
 	@Autowired
 	public EmployeeDetailsRepository employeedetailsrepo;

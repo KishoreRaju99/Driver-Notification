@@ -14,18 +14,18 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.entity.CabInfo;
 import com.example.demo.entity.DriverInfo;
-import com.example.demo.repo.CabInfoRepo;
-import com.example.demo.repo.DriverInfoRepo;
+import com.example.demo.repo.CabInfoRepository;
+import com.example.demo.repo.DriverInfoRepository;
 
 
 @Service
 public class UserService implements UserDetailsService {
 	
 	@Autowired
-	private DriverInfoRepo driverInfoRepo;
+	private DriverInfoRepository driverInfoRepo;
 	
 	@Autowired
-	private CabInfoRepo  cabInfoRepo;
+	private CabInfoRepository  cabInfoRepo;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

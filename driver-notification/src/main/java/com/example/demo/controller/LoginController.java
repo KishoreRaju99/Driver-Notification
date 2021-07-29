@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.entity.CabInfo;
 import com.example.demo.entity.UserRequest;
 import com.example.demo.loginbl.LoginBl;
-import com.example.demo.repo.CabInfoRepo;
+import com.example.demo.repo.CabInfoRepository;
 
 @CrossOrigin(origins = { "*" })
 @RestController
@@ -26,7 +26,7 @@ public class LoginController {
 	private LoginBl loginBl;
 
 	@Autowired
-	private CabInfoRepo cabInfoRepo;
+	private CabInfoRepository cabInfoRepo;
 
 	@PostMapping("/authenticate")
 	public ResponseEntity<String> authenticate(@RequestBody UserRequest userRequest) throws Exception {

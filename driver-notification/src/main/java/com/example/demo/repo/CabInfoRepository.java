@@ -5,7 +5,7 @@ import com.example.demo.entity.CabInfo;
 
 
 
-public interface CabInfoRepo extends MongoRepository<CabInfo, String>{
+public interface CabInfoRepository extends MongoRepository<CabInfo, String>{
 	
 	CabInfo findByCabNumber(String cabNumber);
 }

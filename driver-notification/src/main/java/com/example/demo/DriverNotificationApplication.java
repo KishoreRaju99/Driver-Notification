@@ -13,8 +13,8 @@ import com.example.demo.entity.DriverInfo;
 import com.example.demo.entity.EmployeeDetails;
 import com.example.demo.entity.TripCabInfo;
 import com.example.demo.repo.BookingRepository;
-import com.example.demo.repo.CabInfoRepo;
-import com.example.demo.repo.DriverInfoRepo;
+import com.example.demo.repo.CabInfoRepository;
+import com.example.demo.repo.DriverInfoRepository;
 import com.example.demo.repo.EmployeeDetailsRepository;
 import com.example.demo.repo.TripCabInfoRepository;
 
@@ -35,10 +35,10 @@ public class DriverNotificationApplication {
 	 private EmployeeDetailsRepository EmployeeReposs;
 	 
 	 @Autowired
-	 private CabInfoRepo repos;
+	 private CabInfoRepository repos;
 	 
 	 @Autowired
-	 private  DriverInfoRepo driverRepo;
+	 private  DriverInfoRepository driverRepo;
 	
 	
 	@Bean

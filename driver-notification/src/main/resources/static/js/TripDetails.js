@@ -5,7 +5,6 @@ window.onload = getdetail;
 var cabNumber = sessionStorage.getItem('commonFileCabNumber');
 var drivername = sessionStorage.getItem('commonFileDriverName');
 var todayTripId = sessionStorage.getItem('commonFileTripId');
-
 var count;                   //screen loads
 var queryStr = window.location.search;	
 var driveName;

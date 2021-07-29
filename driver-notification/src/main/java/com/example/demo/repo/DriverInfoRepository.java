@@ -9,7 +9,7 @@ import com.example.demo.entity.DriverInfo;
 
 
 @Repository
-public interface DriverInfoRepo extends MongoRepository<DriverInfo, Integer>{
+public interface DriverInfoRepository extends MongoRepository<DriverInfo, Integer>{
 	
 
 	DriverInfo findByDriverId(long driverId);

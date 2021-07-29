@@ -12,7 +12,7 @@ var queryStr = window.location.search;
 	
 var status= queryStr.split("s=")[1];
 var count;
-var r = 0;
+var reachedcount = 0;
 var show = "show";
 var noshow ="noshow";
 var arr;
@@ -42,7 +42,7 @@ time = JSON.parse(xhrTime.responseText);
 var p1 = document.createElement("p");
 p1.className = "trip-started";
 
-
+//p1.innerHTML = "Trip Started At " + hour[0] + ":" + hour[1];
 var hour =time.startTime.split(":");
 if (hour[0] < 12) {
 if (hour[0] >= 10) {
@@ -197,27 +197,27 @@ function processResponse() {
 			div7.dataset.target = "#reached-confirm";
 			div7.id = "div7" + i;
 
-			var list = document.createElement('ul');
+			var list = document.createElement('employeeId');
 			list.className = "p-0";
-			list.id = "ul" + i;
+			list.id = "employeeId" + i;
 
-			var listitem1 = document.createElement('li');
-			listitem1.className = "Name";
-			listitem1.innerText = arr[i].employeeName;
+			var name = document.createElement('li');
+			name.className = "Name";
+			name.innerText = arr[i].employeeName;
 
 
-			var listitem2 = document.createElement('li');
-			listitem2.className = "Emp-ID";
-			listitem2.innerText = "EmpId:"+ arr[i].employeeId;
+			var empId = document.createElement('li');
+			empId.className = "Emp-ID";
+			empId.innerText = "EmpId:"+ arr[i].employeeId;
 
-			var listitem3 = document.createElement('li');
-			listitem3.className = "Address";
+			var Address = document.createElement('li');
+			Address.className = "Address";
 
-			listitem3.innerHTML = "<img src='images/Map-table.svg' alt='icon' class= 'map-icon' >" + arr[i].dropPoint;
+			Address.innerHTML = "<img src='images/Map-table.svg' alt='icon' class= 'map-icon' >" + arr[i].dropPoint;
 
-			list.appendChild(listitem1);
-			list.appendChild(listitem2);
-			list.appendChild(listitem3);
+			list.appendChild(name);
+			list.appendChild(empId);
+			list.appendChild(Address);
 
 			div3.appendChild(list);
 
@@ -240,48 +240,51 @@ function processResponse() {
 }
 
 
-var sts;
-var ul;
+var notreachedbtn;
+var employeeId;
 var selected;
-var sts1;
+var reachedbtn;
 var empId;
 function myfunction(radio) {
 	selected = radio.name;
 
 	var id = radio.closest("div").id;
 	var spiltid = id.replace("div7", "");
-	ul = document.getElementById("ul" + spiltid).getElementsByTagName("li")[1].innerText;
-	empId = ul.split(":")[1];
+	 employeeId = document.getElementById("employeeId" + spiltid).getElementsByTagName("li")[1].innerText;
+	empId = employeeId.split(":")[1];
 	
-	sts = radio.id.replace("radio-","")-1;
+	 notreachedbtn = radio.id.replace("radio-","")-1;
 	
-	sts1=radio.id;
+	reachedbtn=radio.id;
 				
 }
 
 	
 	function notreached(){
-		document.getElementById("radio-"+sts).checked=true;
+		document.getElementById("radio-"+notreachedbtn).checked=true;
 		
 	}
 	
 
 
 function reached() {
+	//let ab = Number(TodayTripId);
 	
+//alert(id);
+
 	var xhrReached = new XMLHttpRequest();
 	xhrReached.open("PUT", "http://localhost:8083/employee/status/"+empId, true);
 
 	xhrReached.onreadystatechange = function() {
 		if (xhrReached.readyState == 4 && xhrReached.status == 200) {
 			
-			r = r + 1;
-		//	alert(count + r);
-			document.getElementById(sts1).disabled=true;
-			document.getElementById("radio-"+sts).disabled=true;
+			reachedcount = reachedcount + 1;
+		//	alert(count + reachedcount);
+			document.getElementById(reachedbtn).disabled=true;
+			document.getElementById("radio-"+notreachedbtn).disabled=true;
 			
 				
-			if (count == r) {
+			if (count == reachedcount) {
 				$('#completed').modal('show');
 			}
 			
@@ -293,6 +296,7 @@ function reached() {
 
 
 function ok() {
+//alert(id); 
 let ab = Number(TodayTripId);
 	var xhrupdate = new XMLHttpRequest();
 	xhrupdate.open("PUT", "http://localhost:8083/updateme/"+ab,true);
