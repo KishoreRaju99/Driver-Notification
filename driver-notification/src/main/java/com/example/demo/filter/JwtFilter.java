@@ -58,6 +58,7 @@ public class JwtFilter extends OncePerRequestFilter {
 //                request.getSession().invalidate();
 //                response.sendRedirect("/DriverLogin.html");
 //                return;
+            	throw e;
             }
 
 

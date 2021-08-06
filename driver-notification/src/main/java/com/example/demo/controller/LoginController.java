@@ -31,9 +31,10 @@ public class LoginController {
 	@PostMapping("/authenticate")
 	public ResponseEntity<String> authenticate(@RequestBody UserRequest userRequest) throws Exception {
 		try {
-			// controller->bl->Dl->Repo->Db
+			
 			return ResponseEntity.ok(loginBl.validateUser(userRequest));
-		} catch (BadCredentialsException | UsernameNotFoundException e) {
+		} 
+		catch (BadCredentialsException | UsernameNotFoundException e) {
 			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Bad Credential");
 
 		}

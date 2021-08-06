@@ -37,6 +37,9 @@ function loadCookies() {
  	 document.getElementById("driverLoginId").value.length <9||
  	 document.getElementById("driverLoginId").value.length >10||
  	 !document.getElementById('driverLoginId').value.match(letters) ){
+           
+      // document.getElementById('error-in-red-color').innerHTML="<p> 'Enter correct LoginID' </p>";    
+           
            alert('Please Fill Valid LoginId');
            return;
        }
@@ -45,7 +48,10 @@ function loadCookies() {
        	document.getElementById("Password").value=="" || 
        	document.getElementById("Password").value.length <10||
        	!document.getElementById('Password').value.match(pass)){
-           alert("Please File Valid Password");
+          
+          
+          
+          alert("Please File Valid Password");
            return;
        }
        
